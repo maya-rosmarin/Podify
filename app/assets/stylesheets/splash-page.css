@@ -1,0 +1,78 @@
+body {
+  font-family: Muli;
+}
+
+.green-button {
+  background-color: #1db954;
+  border-radius: 500px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  padding: 16px 48px 18px;
+  margin-bottom: 14px;
+  transition-property: background-color,border-color,color,box-shadow,filter,-webkit-box-shadow,-webkit-filter;
+  letter-spacing: 2px;
+  min-width: 425px;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: Muli, Helvetica,Arial,sans-serif;
+}
+
+.green-button:hover {
+  background-color: #1ed760;
+}
+
+.session-form {
+  font-family: Muli;
+  background-image: url("https://ak4.picdn.net/shutterstock/videos/25788914/thumb/10.jpg")
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.linkText {
+  color: #1db954;
+  text-decoration: none;
+  font-size: .9375em;
+}
+
+.linkText:hover {
+  color: #1ed760;
+}
+
+.user-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-field {
+  height: 40px;
+}
+
+placeholder {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+#sign-up-header {
+  font-weight: 1000;
+}
+
+.logo-header {
+  font-weight: 700;
+  color: #4D4B4B;
+  text-align: center;
+}
+
+.greeting-page {
+  background-image: url("https://ak4.picdn.net/shutterstock/videos/25788914/thumb/10.jpg?i10c=img.resize")
+}
