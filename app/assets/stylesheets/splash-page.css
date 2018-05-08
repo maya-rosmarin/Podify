@@ -28,7 +28,6 @@ body {
 
 .session-form {
   font-family: Muli;
-  background-image: url("https://ak4.picdn.net/shutterstock/videos/25788914/thumb/10.jpg");
   height: 100%;
   width: 100%;
   display: flex;
@@ -73,6 +72,13 @@ placeholder {
   text-align: center;
 }
 
-.greeting-page {
-  background-image: url("https://ak4.picdn.net/shutterstock/videos/25788914/thumb/10.jpg?i10c=img.resize")
+img.splash-background-image {
+  min-height: 100%;
+  min-width: 1024px;
+  min-width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

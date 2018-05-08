@@ -9,7 +9,7 @@ import FaVolumeUp from 'react-icons/lib/fa/volume-up';
 const App = () => (
   <div>
     <h2 className="logo-header" ><FaVolumeUp />  Podify</h2>
-    <GreetingContainer className="greeting-page" />
+    <GreetingContainer />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
