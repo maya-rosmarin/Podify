@@ -21,7 +21,7 @@ body {
   border: 1px solid transparent;
   font-family: Muli, Helvetica,Arial,sans-serif;
   display: inline-block;
-  margin: 20px auto;
+  // margin: 20px auto;
 }
 
 .splash-button {
@@ -116,13 +116,28 @@ img.splash-background-image {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
   border-right: 1px solid #767676;
-  background-image: image-url('splash-page-background.jpg');
+  padding-top: 150px;
 }
 
 .splash-background {
   background-image: image-url('splash-page-background.jpg');
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.sign-up-logo-header {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
 }

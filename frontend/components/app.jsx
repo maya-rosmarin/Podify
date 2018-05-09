@@ -10,8 +10,8 @@ const App = () => (
   <div>
     <h2 className="logo-header" ><FaVolumeUp />  Podify</h2>
     <GreetingContainer />
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute exact path="/signup" component={SignupFormContainer} />
   </div>
 );
 
