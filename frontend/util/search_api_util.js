@@ -8,7 +8,6 @@ export const fetchSearchResults = (searchQuery) => {
 
 const parseSearchTerms = (searchQuery) => {
   let query = ""
-  debugger
   const searchString = searchQuery.split(" ").join("+")
   const searchParams = {
     country: 'US',

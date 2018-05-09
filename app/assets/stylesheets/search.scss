@@ -7,7 +7,7 @@ body {
   background-color: #36393d;
   border: none;
   // width: calc(100vw - 30px);
-  width: 100%;
+  width: 83.75vw;
   height: 150px;
   font-size: 48px;
   color: #a1a4a8;
@@ -24,9 +24,13 @@ body {
   width: auto;
 }
 
+.search-link:hover {
+  color: #dddddd;
+}
+
 .search-container {
   height: 100vh;
-  width: 80vw;
+  width: 86vw;
   background-color: #1d2023;
 }
 
