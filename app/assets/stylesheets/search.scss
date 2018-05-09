@@ -4,29 +4,29 @@ body {
 }
 
 .search-input {
-  width: 200px;
   background-color: #36393d;
   border: none;
+  // width: calc(100vw - 30px);
   width: 100%;
   height: 150px;
   font-size: 48px;
-  padding-left: 15px;
   color: #a1a4a8;
   cursor: text;
   display: inline-block;
   outline: none;
+  padding: 0 15px;
 }
 
 .search-link {
   text-decoration: none;
   font-weight: 700;
-  color: #a1a4a8;
+  color: #767676;
   width: auto;
 }
 
 .search-container {
-  height: 1000px;
-  width: auto;
+  height: 100vh;
+  width: 82.5%;
   background-color: #1d2023;
 }
 
@@ -36,4 +36,8 @@ body {
 
 input[type="text"].search-input::-webkit-input-placeholder {
   font-size: 48px;
+}
+
+.search-page {
+  display: flex;
 }

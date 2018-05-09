@@ -6,17 +6,14 @@ import FaUser from 'react-icons/lib/fa/user';
 import { AuthRoute } from '../../util/route_util';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
-import FaSearch from 'react-icons/lib/fa/search'
+import Nav from '../nav/nav';
 
 export default (props) => {
   if (props.currentUser) {
     return (
       <div>
-        <Link className="search-link" to='/search'><FaSearch />  Search</Link>
         <br />
-        <ul className="username-dropdown"><FaUser /> {props.currentUser.username}
-        <button className="logout-dropdown white-splash-button" onClick={props.logout}>Logout</button>
-        </ul>
+        <Nav currentUser={props.currentUser} logout={props.logout}/>
       </div>
     );
   } else {

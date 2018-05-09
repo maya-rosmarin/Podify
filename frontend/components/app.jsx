@@ -9,10 +9,9 @@ import SearchFormContainer from './search/search_form_container';
 
 const App = () => (
   <div>
-    <h2 className="logo-header" ><FaVolumeUp />  Podify</h2>
     <Route exact path={"/"} component={GreetingContainer} />
     <Route path={"/search"} component={SearchFormContainer} />
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute exact path="/login" currentUser={window.currentUser} component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
   </div>
 );

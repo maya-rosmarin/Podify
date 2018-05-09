@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom'
+import FaVolumeUp from 'react-icons/lib/fa/volume-up';
 
 class SessionForm extends React.Component {
   constructor (props) {
@@ -42,6 +43,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form">
+        <h2 className="logo-header" ><FaVolumeUp />  Podify</h2>
         <h4 className="sign-up-header">{header}</h4>
           <div>{this.props.errors}</div>
           <form className="user-input" onSubmit={this.handleSubmit}>

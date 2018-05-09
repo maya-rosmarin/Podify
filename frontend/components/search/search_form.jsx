@@ -1,32 +1,29 @@
 import React from 'react';
 import FaSearch from 'react-icons/lib/fa/search'
+import Nav from '../nav/nav';
 
 class SearchForm extends React.Component {
   constructor (props) {
     super(props)
-    this.handleSubmit = this.handleChange.bind(this);
+    this.state = {
+      searchQuery: ""
+    }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange (e) {
-    e.preventDefault();
-    const podcasts = Object.assign({}, this.state)
-    this.props.requestAllPodcasts();
-  }
-
-  update (field) {
-    return e => this.setState({
-      [field]: e.target.value
-    });
+    this.setState(
+      { searchQuery: e.target.value },
+      () => this.props.requestAllPodcasts(this.state.searchQuery)
+    )
   }
 
   render () {
     return (
-      <div>
-        <div><FaSearch />  Search</div>
+      <div className="search-page">
+        <Nav currentUser={this.props.currentUser}/>
         <div className="search-container">
-          <form>
-            <input className="search-input" type="text" onChange={this.update("searchQuery")}   placeholder="Search for a podcast"/>
-          </form>
+          <input className="search-input" type="text" onChange={this.handleChange}   placeholder="Search for a podcast"/>
         </div>
       </div>
     )
