@@ -169,3 +169,46 @@ img.splash-background-image {
 .check {
   color: #1db954;
 }
+
+.logout-dropdown {
+  position: absolute;
+  border-radius: 15px;
+  z-index: -1;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100px;
+  background-color: black;
+  color: white;
+  border-color: white;
+  font-size: 14px;
+  font-weight: 250;
+  height: 30px;
+  display: none;
+  margin-top: 8px;
+  margin-left: 75px;
+}
+
+.logout-dropdown:hover {
+  font-size: 15px;
+  background-color: black;
+  padding: 2px 2px 2px 2px;
+  height: 31px;
+  width: 110px;;
+}
+
+.username-dropdown {
+  background-color: #272a30;
+  color: #6d6e70;
+  border-radius: 15px;
+  display: inline-block;
+  padding-right: 30px;
+  width: 100px;
+  height: 30px;
+}
+
+.username-dropdown:hover .logout-dropdown {
+  display: block;
+  z-index: 1;
+}

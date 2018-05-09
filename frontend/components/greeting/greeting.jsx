@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FaVolumeUp from 'react-icons/lib/fa/volume-up';
-import FaCheckMark from 'react-icons/lib/fa/check'
+import FaCheckMark from 'react-icons/lib/fa/check';
+import FaUser from 'react-icons/lib/fa/user';
 import { AuthRoute } from '../../util/route_util';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
@@ -10,8 +11,9 @@ export default (props) => {
   if (props.currentUser) {
     return (
       <div>
-        <h2>{props.currentUser.username}</h2>
-        <button onClick={props.logout}>Logout</button>
+        <ul className="username-dropdown"><FaUser /> {props.currentUser.username}
+        <button className="logout-dropdown white-splash-button" onClick={props.logout}>Logout</button>
+        </ul>
       </div>
     );
   } else {
