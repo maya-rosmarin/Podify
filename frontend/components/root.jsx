@@ -7,9 +7,7 @@ import GreetingContainer from './greeting/greeting_container';
 const Root = ({ store }) => (
   <Provider store={ store } >
     <HashRouter>
-      <div>
-        <Route path={"/"} component={GreetingContainer} />
-      </div>
+      <Route path={"/"} component={GreetingContainer} />
     </HashRouter>
   </Provider>
 );
