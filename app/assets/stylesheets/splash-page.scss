@@ -119,14 +119,16 @@ img.splash-background-image {
   align-items: center;
   text-align: center;
   border-right: 1px solid #767676;
-  padding-top: 150px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .splash-background {
   background-image: image-url('splash-page-background.jpg');
   bottom: 0;
   content: "";
-  display: block;
+  display: flex;
+  flex-direction: row;
   left: 0;
   position: absolute;
   right: 0;
@@ -140,4 +142,30 @@ img.splash-background-image {
   color: white;
   font-size: 32px;
   font-weight: bold;
+}
+
+.splash-page-right-teaser {
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 150px;
+}
+
+.green-splash-text {
+  color: #1db954;
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.white-big-splash-text {
+  color: #fff;
+  font-size: 24px;
+}
+
+.white-little-splash-text {
+  color: #fff;
+  font-weight: 700;
+}
+
+.check {
+  color: #1db954;
 }

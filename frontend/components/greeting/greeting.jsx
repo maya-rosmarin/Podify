@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FaVolumeUp from 'react-icons/lib/fa/volume-up';
+import FaCheckMark from 'react-icons/lib/fa/check'
 import { AuthRoute } from '../../util/route_util';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
@@ -28,7 +29,13 @@ export default (props) => {
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
+        <div className="splash-page-right-teaser">
+          <p className="green-splash-text">Get the right podcasts, <br /> right now</p>
+          <p className="white-big-splash-text">Listen to thousands of podcasts for free</p>
+          <p className="white-little-splash-text"><FaCheckMark className="check"/> Search and discover podcasts you'll love</p>
+          <p className="white-little-splash-text"><FaCheckMark className="check"/> Create playlists of your favorite podcasts</p>
       </div>
+    </div>
     );
   }
 };
