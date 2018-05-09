@@ -5,11 +5,13 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 import FaVolumeUp from 'react-icons/lib/fa/volume-up';
+import SearchForm from './search/search_form';
 
 const App = () => (
   <div>
     <h2 className="logo-header" ><FaVolumeUp />  Podify</h2>
     <Route exact path={"/"} component={GreetingContainer} />
+    <Route path={"/search"} component={SearchForm} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
   </div>

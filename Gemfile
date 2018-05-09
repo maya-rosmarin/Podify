@@ -33,6 +33,7 @@ gem 'faker'
 
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'feedjira'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
