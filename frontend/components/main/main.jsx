@@ -6,7 +6,7 @@ import Nav from '../nav/nav';
 const Main = (props) => {
   debugger
   return (
-    <div>
+    <div className="main-container">
       <Nav className="nav-meta" currentUser={props.currentUser} logout={props.logout} />
       <Route exact path="/search" component={SearchFormContainer} />
     </div>
