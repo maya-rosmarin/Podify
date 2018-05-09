@@ -1,23 +1,33 @@
 import React from 'react';
+import FaSearch from 'react-icons/lib/fa/search'
 
 class SearchForm extends React.Component {
   constructor (props) {
     super(props)
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleChange.bind(this);
   }
 
-  handleSubmit (e) {
+  handleChange (e) {
     e.preventDefault();
     const podcasts = Object.assign({}, this.state)
+    this.props.requestAllPodcasts();
+  }
+
+  update (field) {
+    return e => this.setState({
+      [field]: e.target.value
+    });
   }
 
   render () {
     return (
       <div>
-        <form>
-          <h1>hello from search</h1>
-          <input className="input-field" type="text" onChange={this.update("searchQuery")} placeholder="Search"/>
-        </form>
+        <div><FaSearch />  Search</div>
+        <div className="search-container">
+          <form>
+            <input className="search-input" type="text" onChange={this.update("searchQuery")}   placeholder="Search for a podcast"/>
+          </form>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.search-input {
+  width: 200px;
+  background-color: #36393d;
+  border: none;
+  width: 100%;
+  height: 150px;
+  font-size: 48px;
+  padding-left: 15px;
+  color: #a1a4a8;
+  cursor: text;
+  display: inline-block;
+  outline: none;
+}
+
+.search-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: #a1a4a8;
+  width: auto;
+}
+
+.search-container {
+  height: 1000px;
+  width: auto;
+  background-color: #1d2023;
+}
+
+.search-input {
+  top: auto;
+}
+
+input[type="text"].search-input::-webkit-input-placeholder {
+  font-size: 48px;
+}
