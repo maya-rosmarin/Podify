@@ -21,7 +21,7 @@ class SearchForm extends React.Component {
   render () {
     return (
       <div className="search-page">
-        <Nav currentUser={this.props.currentUser}/>
+        <Nav currentUser={this.props.currentUser} logout={this.props.logout}/>
         <div className="search-container">
           <input className="search-input" type="text" onChange={this.handleChange} placeholder="Search for a podcast"/>
         </div>

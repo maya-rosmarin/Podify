@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SearchForm from './search_form';
 import { requestAllPodcasts } from '../../actions/search_actions';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
   let currentUserId = state.session.id;
@@ -15,7 +16,8 @@ const mapDispatchToProps = dispatch => {
   return {
     requestAllPodcasts: (searchQuery) => {
       return dispatch(requestAllPodcasts(searchQuery))
-    }
+    },
+    logout: () => { return dispatch(logout()); }
   };
 };
 
