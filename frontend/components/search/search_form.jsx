@@ -23,7 +23,7 @@ class SearchForm extends React.Component {
       <div className="search-page">
         <Nav currentUser={this.props.currentUser}/>
         <div className="search-container">
-          <input className="search-input" type="text" onChange={this.handleChange}   placeholder="Search for a podcast"/>
+          <input className="search-input" type="text" onChange={this.handleChange} placeholder="Search for a podcast"/>
         </div>
       </div>
     )

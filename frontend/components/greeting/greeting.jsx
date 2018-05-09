@@ -9,6 +9,7 @@ import SignupFormContainer from '../session/signup_form_container';
 import Nav from '../nav/nav';
 
 export default (props) => {
+  debugger
   if (props.currentUser) {
     return (
       <div>

@@ -7,6 +7,7 @@ import FaSignout from 'react-icons/lib/fa/sign-out';
 import FaHome from 'react-icons/lib/fa/home';
 
 export default (props) => {
+  debugger
   return (
     <ul className="nav-bar">
       <li><Link className="search-link" to='/search'><FaSearch />     Search</Link>

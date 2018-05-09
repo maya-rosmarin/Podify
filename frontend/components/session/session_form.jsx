@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    let header, link, linkText, buttonText, linkPrompt;
+    let header, link, linkText, buttonText, linkPrompt, guestUser, guestLink;
     if (this.props.formType === 'signup') {
       header = "Sign up with your email address",
       link = "/login",
@@ -39,6 +39,8 @@ class SessionForm extends React.Component {
       linkText = "Sign up",
       buttonText = "LOG IN",
       linkPrompt = "Don't have an account? "
+      guestUser = "Sign in as "
+      guestLink = "Guest User"
     };
 
     return (
@@ -55,6 +57,8 @@ class SessionForm extends React.Component {
             <br />
           </form>
           <div>{linkPrompt}<Link className="linkText" to={link}>{linkText}</Link></div>
+          <br />
+          <div>{guestUser} <button onClick={() => {this.props.processForm({username: 'Guest', password: 'password'})}} className="linkText guest">{guestLink}</button></div>
       </div>
     )
   }
