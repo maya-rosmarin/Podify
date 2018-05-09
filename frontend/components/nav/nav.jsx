@@ -10,10 +10,10 @@ export default (props) => {
   debugger
   return (
     <ul className="nav-bar">
-      <li><Link className="search-link" to='/search'><FaSearch />     Search</Link>
+      <li><Link className="search-link" to="search"><FaSearch />     Search</Link>
       <br />
       <br />
-      <Link className="search-link" to='/'><FaHome />     Home</Link></li>
+      <Link className="search-link" to="/"><FaHome />     Home</Link></li>
       <div className="nav-bottom">
         <li><button className="logout-button" onClick={props.logout}><FaSignout />     Logout</button></li>
         <li className="username"><FaUser /> {props.currentUser.username}</li>

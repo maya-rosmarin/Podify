@@ -6,16 +6,12 @@ import FaUser from 'react-icons/lib/fa/user';
 import { AuthRoute } from '../../util/route_util';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
-import Nav from '../nav/nav';
+import MainContainer from '../main/main_container';
 
 export default (props) => {
-  debugger
   if (props.currentUser) {
     return (
-      <div>
-        <br />
-        <Nav currentUser={props.currentUser} logout={props.logout}/>
-      </div>
+      <MainContainer />
     );
   } else {
     return (
