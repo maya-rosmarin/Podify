@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form">
-        <h4 id="sign-up-header">{header}</h4>
+        <h4 className="sign-up-header">{header}</h4>
           <div>{this.props.errors}</div>
           <form className="user-input" onSubmit={this.handleSubmit}>
             <input className="input-field" onChange={this.update("username")} type="text" value={this.state.username} placeholder="Email" />

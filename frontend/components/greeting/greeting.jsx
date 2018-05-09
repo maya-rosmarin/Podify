@@ -11,14 +11,16 @@ export default (props) => {
     );
   } else {
     return (
-      <div className="splash-sign-in-div">
-        <Link className="green-button splash-button" to='/signup' >SIGN UP</Link>
-        <br />
-        <br />
-        <div id="already">&mdash; ALREADY HAVE AN ACCOUNT? &mdash;</div>
-        <br />
-        <br />
-        <Link className="green-button white-splash-button" to='/login' >LOG IN</Link>
+      <div className="splash-background">
+        <div className="splash-sign-in-div">
+          <Link className="green-button splash-button" to='/signup' >SIGN UP</Link>
+          <br />
+          <br />
+          <div id="already">&mdash; ALREADY HAVE AN ACCOUNT? &mdash;</div>
+          <br />
+          <br />
+          <Link className="green-button white-splash-button" to='/login' >LOG IN</Link>
+        </div>
       </div>
     );
   }

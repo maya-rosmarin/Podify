@@ -2,8 +2,12 @@
   <script type="text/javascript">
     window.currentUser = <%= render('api/users/user.json.jbuilder', user: current_user).html_safe %>
   </script>
-  <% else %>
-  <img class="splash-background-image" src="file:///Users/mayarosmarin/Desktop/spotify-background.png" />
 <% end %>
+
+<script type="text/javascript">
+  window.staticImages = {
+    splash_page_background: "<%= image_url("splash-page-background.jpg") %>"
+  }
+</script>
 
 <div id="root"></div>

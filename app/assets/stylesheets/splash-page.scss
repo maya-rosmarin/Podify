@@ -78,9 +78,10 @@ body {
   height: 40px;
 }
 
-placeholder {
+::placeholder {
   padding-left: 10px;
   font-size: 14px;
+  font-weight: 550;
 }
 
 #sign-up-header {
@@ -117,4 +118,11 @@ img.splash-background-image {
   justify-content: space-between;
   text-align: center;
   border-right: 1px solid #767676;
+  background-image: image-url('splash-page-background.jpg');
+}
+
+.splash-background {
+  background-image: image-url('splash-page-background.jpg');
+  width: 100%;
+  height: 100%;
 }
