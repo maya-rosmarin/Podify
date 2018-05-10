@@ -9,7 +9,7 @@ class SearchForm extends React.Component {
     this.state = {
       searchQuery: "",
       // inside json response, returns object with key of response which returns object with key of results
-      jsonResponse: {response: {results: []}}
+      jsonResponse: []
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,7 +21,8 @@ class SearchForm extends React.Component {
     this.setState(
     { searchQuery: e.target.value },
     () => {
-      this.timeout = setTimeout(() => this.props.requestAllPodcasts(this.state.searchQuery).then(null, (response) => this.setState({jsonResponse: (JSON.parse(response.responseText))})), 500)
+      this.timeout = setTimeout(() => this.props.requestAllPodcasts(this.state.searchQuery).then(null, (response) => {
+        this.setState({jsonResponse: (JSON.parse(response.responseText).results)})}), 500)
     }
   )
 };
@@ -32,8 +33,8 @@ class SearchForm extends React.Component {
       <div className="search-page">
         <div className="search-container">
           <input className="search-input" type="text" onChange={this.handleChange} placeholder="Search for a podcast"/>
+          <SearchIndex jsonResponse={this.state.jsonResponse} />
         </div>
-        <SearchIndex jsonResponse={this.state.jsonResponse} />
       </div>
     )
   }

@@ -3,16 +3,20 @@ import React from 'react';
 class SearchIndex extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      jsonResponse: {response: {results: []}}
-    }
   }
 
   render () {
+    let searchResults;
     debugger
-    // let searchResults = {this.props.jsonResponse.response.results.map((result) => <li>result</li>)}
+    if (this.props.jsonResponse.length === 0) {
+      searchResults = [];
+    } else {
+      searchResults = this.props.jsonResponse.map((result, idx) => <li className="index-item" key={idx} > <img className="podcast-artwork" src={result.artworkUrl100} /> {result.collectionName}</li>)
+    }
     return (
-      <div></div>
+      <div>
+        {searchResults}
+      </div>
     );
   };
 }
