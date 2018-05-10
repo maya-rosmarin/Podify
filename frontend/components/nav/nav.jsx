@@ -10,11 +10,11 @@ import FaVolumeUp from 'react-icons/lib/fa/volume-up';
 export default (props) => {
   return (
     <ul className="nav-bar">
-      <FaVolumeUp />
-      <li><Link className="search-link" to="search"><FaSearch />     Search</Link>
+      <FaVolumeUp className="username vol-icon" />
+      <li className="top-two-nav"><Link className="search-link" to="search"><FaSearch className="nav-icon" />     Search</Link>
       <br />
       <br />
-      <Link className="search-link" to="/"><FaHome />     Home</Link></li>
+      <Link className="search-link" to="/"><FaHome className="nav-icon" />     Home</Link></li>
       <div className="nav-bottom">
         <li><button className="logout-button" onClick={props.logout}><FaSignout />     Logout</button></li>
         <li className="username">  <FaUser />  {props.currentUser.username}</li>
