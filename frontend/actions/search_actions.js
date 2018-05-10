@@ -4,7 +4,11 @@ export const RECEIVE_ALL_PODCASTS = 'RECEIVE_ALL_PODCASTS';
 
 export const requestAllPodcasts = (searchQuery) => {
   return (dispatch) => {
-    return SearchApiUtil.fetchSearchResults(searchQuery).then((podcasts) => dispatch(receiveAllPodcasts(podcasts)))
+    return SearchApiUtil.fetchSearchResults(searchQuery)
+      .then(null,
+        (response) => {
+          dispatch(receiveAllPodcasts(JSON.parse(response.responseText).results))
+        })
   };
 };
 

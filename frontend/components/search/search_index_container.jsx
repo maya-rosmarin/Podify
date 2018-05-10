@@ -7,9 +7,9 @@ import { logout } from '../../actions/session_actions';
 const mapStateToProps = state => {
   let currentUserId = state.session.id;
   return {
-    errors: state.errors,
-    currentUser: state.entities.users[currentUserId]
-  };
+    currentUser: state.entities.users[currentUserId],
+    podcasts: Object.values(state.entities.remotePodcasts)
+    };
 };
 
 const mapDispatchToProps = dispatch => {

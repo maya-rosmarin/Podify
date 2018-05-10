@@ -8,11 +8,10 @@ class SearchIndex extends React.Component {
 
   render () {
     let searchResults;
-    debugger
-    if (this.props.jsonResponse.length === 0) {
+    if (this.props.podcasts.length === 0) {
       searchResults = [];
     } else {
-      searchResults = this.props.jsonResponse.map((result, idx) =>
+      searchResults = this.props.podcasts.map((result, idx) =>
       <Link className="index-item" to={`/podcasts/${result.collectionId}`}>
       <li className="index-item" key={result.collectionId} > <img className="podcast-artwork" src={result.artworkUrl100} /> <br />{result.collectionName}</li>
       </Link>
