@@ -4,6 +4,7 @@ import { requestAllPodcasts } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    collectionId: ownProps.match.params.collectionId,
     currentPodcast: state.entities.remotePodcasts[ownProps.match.params.collectionId]
   };
 };

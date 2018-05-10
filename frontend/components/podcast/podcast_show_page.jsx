@@ -3,7 +3,8 @@ import React from 'react';
 class PodcastShowPage extends React.Component {
 
   componentDidMount () {
-    this.props.requestAllPodcasts(this.props.searchQuery);
+    debugger
+    this.props.requestAllPodcasts(this.props.currentPodcast.collectionId);
   }
 
   render () {
