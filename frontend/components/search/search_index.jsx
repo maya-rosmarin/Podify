@@ -13,7 +13,7 @@ class SearchIndex extends React.Component {
       searchResults = [];
     } else {
       searchResults = this.props.jsonResponse.map((result, idx) =>
-      <Link to={`/podcasts/${result.collectionId}`}>
+      <Link className="index-item" to={`/podcasts/${result.collectionId}`}>
       <li className="index-item" key={result.collectionId} > <img className="podcast-artwork" src={result.artworkUrl100} /> {result.collectionName}</li>
       </Link>
   )

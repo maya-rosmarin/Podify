@@ -6,8 +6,8 @@ body {
 .search-input {
   background-color: #36393d;
   border: none;
-  // width: calc(100vw - 30px);
-  width: 83.75vw;
+  // width: 100%;
+  width: calc(100vw - 200px);
   height: 150px;
   font-size: 48px;
   color: #a1a4a8;
@@ -34,8 +34,14 @@ body {
 
 .search-container {
   height: 100vh;
-  width: 86vw;
+  width: calc(100vw - 200px);
   background-color: #1d2023;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 .search-input {
@@ -47,7 +53,10 @@ input[type="text"].search-input::-webkit-input-placeholder {
 }
 
 .search-page {
+  background-color: #1d2023;
   display: flex;
+  // width: calc(100vw - 200px);
+  // width: 100%
 }
 
 .podcast-artwork {
@@ -60,4 +69,5 @@ input[type="text"].search-input::-webkit-input-placeholder {
   list-style: none;
   color: #767676;
   text-decoration: none;
+  width: 100%;
 }

@@ -4,18 +4,16 @@
   flex-direction: column;
   justify-content: space-around;
   border: 0;
-  min-height: 100vh;
-  max-height: 100vh;
-  max-width: 10vw;
-  min-width: 10vw;
+  min-width: 200px;
+  max-width: 200px;
   text-align: justify;
   list-style: none;
   padding-top: 0;
-  padding-right: 30px;
   margin: 0;
   font-size: 17px;
   font-weight: 800;
-  padding-bottom: 1000px;
+  height: 100vh;
+  align-items: center;
 }
 
 .logout-button {

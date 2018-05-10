@@ -11,7 +11,7 @@ export default (props) => {
   return (
     <ul className="nav-bar">
       <FaVolumeUp className="username vol-icon" />
-      <li className="top-two-nav"><Link className="search-link" to="search"><FaSearch className="nav-icon" />     Search</Link>
+      <li className="top-two-nav"><Link className="search-link" to="/search"><FaSearch className="nav-icon" />     Search</Link>
       <br />
       <br />
       <Link className="search-link" to="/"><FaHome className="nav-icon" />     Home</Link></li>
