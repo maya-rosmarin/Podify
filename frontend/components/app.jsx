@@ -5,6 +5,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import FaVolumeUp from 'react-icons/lib/fa/volume-up';
+import PodcastShowPage from './podcast/podcast_show_page';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route path="/" component={GreetingContainer} />
+      <Route path="/podcasts/:collectionId" component={PodcastShowPage} />
     </Switch>
   </div>
 );

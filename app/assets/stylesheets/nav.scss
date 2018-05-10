@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: space-around;
   border: 0;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   max-width: 10vw;
   min-width: 10vw;
   text-align: justify;
