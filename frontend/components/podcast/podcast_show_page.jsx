@@ -40,7 +40,7 @@ class PodcastShowPage extends React.Component {
         <h1 className="show-page-title">{title}</h1>
         <div className="podcast-show-art">{podcast}</div>
         </div>
-        <div className="episode-index"><p>{episodes}</p></div>
+        <div className="episode-index">{episodes}</div>
       </div>
     )
   }
