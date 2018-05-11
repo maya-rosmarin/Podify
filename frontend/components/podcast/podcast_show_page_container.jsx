@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PodcastShowPage from './podcast_show_page';
-import { requestAllPodcasts } from '../../actions/search_actions';
+import { requestAllPodcasts, requestSinglePodcast } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,6 +13,9 @@ const mapDispatchToProps = dispatch => {
   return {
     requestAllPodcasts: (searchQuery) => {
       return dispatch(requestAllPodcasts(searchQuery))
+    },
+    requestSinglePodcast: (searchQuery) => {
+      return dispatch(requestSinglePodcast(searchQuery))
     }
   };
 };
