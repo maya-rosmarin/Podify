@@ -4,19 +4,23 @@ class PodcastShowPage extends React.Component {
 
   componentDidMount () {
     debugger
-    this.props.requestAllPodcasts(this.props.currentPodcast.collectionId);
+    this.props.requestAllPodcasts(this.props.match.params.collectionName);
   }
 
   render () {
-    let title;
-    if (this.props.currentPodcast) {
-      title = this.props.currentPodcast.collectionName;
+    let title, artwork;
+    debugger
+    if (this.props.match.params.collectionName) {
+      title = this.props.match.params.collectionName;
+      artwork = this.props.match.params.artworkUrl600;
     } else {
       title = ""
+      artwork = ""
     }
     return (
       <div>
-        <h1 className="show-page-title" >{title}</h1>
+        <h1 className="show-page-title" >{title} {artwork}</h1>
+        <div>{artwork}</div>
       </div>
     )
   }

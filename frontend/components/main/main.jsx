@@ -8,7 +8,7 @@ const Main = (props) => {
   return (
     <div className="main-container">
       <Nav className="nav-meta" currentUser={props.currentUser} logout={props.logout} />
-      <Route path="/podcasts/:collectionId" component={PodcastShowPageContainer} />
+      <Route path="/podcasts/:collectionName" component={PodcastShowPageContainer} />
       <Route exact path="/search" component={SearchFormContainer} />
     </div>
   );

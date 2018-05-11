@@ -6,7 +6,6 @@ body {
 .search-input {
   background-color: #36393d;
   border: none;
-  // width: 100%;
   width: calc(100vw - 200px);
   height: 150px;
   font-size: 48px;
@@ -15,6 +14,9 @@ body {
   display: inline-block;
   outline: none;
   padding: 0 15px;
+  top: auto;
+  font-weight: 900;
+  caret-color: #1db954;
 }
 
 .search-link {
@@ -35,17 +37,13 @@ body {
 .search-container {
   height: 100vh;
   width: calc(100vw - 200px);
-  background-color: #1d2023;
+  background-color: #161515;
   overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
-}
-
-.search-input {
-  top: auto;
 }
 
 input[type="text"].search-input::-webkit-input-placeholder {
@@ -55,8 +53,6 @@ input[type="text"].search-input::-webkit-input-placeholder {
 .search-page {
   background-color: #1d2023;
   display: flex;
-  // width: calc(100vw - 200px);
-  // width: 100%
 }
 
 .podcast-artwork {

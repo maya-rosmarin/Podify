@@ -12,8 +12,8 @@ class SearchIndex extends React.Component {
       searchResults = [];
     } else {
       searchResults = this.props.podcasts.map((result, idx) =>
-      <Link className="index-item" to={`/podcasts/${result.collectionId}`}>
-      <li className="index-item" key={result.collectionId} > <img className="podcast-artwork" src={result.artworkUrl100} /> <br />{result.collectionName}</li>
+      <Link className="index-item" to={`/podcasts/${result.collectionName}`}>
+      <li className="index-item" key={result.collectionName} > <img className="podcast-artwork" src={result.artworkUrl600} /> <br />{result.collectionName}</li>
       </Link>
   )
     }
