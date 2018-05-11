@@ -9,7 +9,22 @@ export const fetchSinglePodcast = (searchQuery) => {
   return $.ajax({
     method: 'GET',
     url: 'https://itunes.apple.com/search?',
-    data: { term: searchQuery }
+    data: {
+      country: 'US',
+      media: 'podcast',
+      limit: 10,
+      lang: 'en_us',
+      term: searchQuery
+    }
+  })
+}
+
+export const fetchPodcastEpisodes = (feed_url) => {
+  debugger
+  return $.ajax({
+    method: 'GET',
+    url: 'api/podcasts/get_episodes',
+    data: { feed_url }
   })
 }
 
