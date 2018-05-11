@@ -33,7 +33,7 @@ class PodcastShowPage extends React.Component {
         if (this.props.currentPodcastEpisodes) {
           debugger
           episodes = this.props.currentPodcastEpisodes.map((episode) =>
-            <div><button className="musical-note-button">< FaMusic /></button>    {episode.title}   <div>{episode.summary}</div></div>
+            <div><button className="musical-note-button">< FaMusic /></button>    {episode.title}   </div>
           )
         }
     } else {
@@ -45,7 +45,7 @@ class PodcastShowPage extends React.Component {
         <h1 className="show-page-title">{title}</h1>
         <div className="podcast-show-art">{podcast}</div>
         </div>
-        <div className="episode-index-item"><p>{episodes}</p></div>
+        <div className="episode-index"><p>{episodes}</p></div>
       </div>
     )
   }
