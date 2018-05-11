@@ -2,7 +2,7 @@ import * as SearchApiUtil from '../util/search_api_util';
 
 export const RECEIVE_ALL_PODCASTS = 'RECEIVE_ALL_PODCASTS';
 export const RECEIVE_PODCAST = 'RECEIVE_PODCAST';
-export const RECEIVE_PODCAST_EPISODES = 'RECEIVE_EPISODES';
+export const RECEIVE_PODCAST_EPISODES = 'RECEIVE_PODCAST_EPISODES';
 
 export const requestAllPodcasts = (searchQuery) => {
   return (dispatch) => {
@@ -28,7 +28,7 @@ export const requestSinglePodcast = (searchQuery) => {
 export const requestPodcastEpisodes = (feed_url) => {
   return (dispatch) => {
     return SearchApiUtil.fetchPodcastEpisodes(feed_url)
-      .then(null,
+      .then(
         (episodes) => {
           dispatch(receivePodcastEpisodes(episodes))
         }
@@ -50,9 +50,9 @@ export const receiveSinglePodcast = (podcast) => {
   };
 };
 
-export const receivePodcastEpisodes = (podcast) => {
+export const receivePodcastEpisodes = (episodes) => {
   return {
     type: RECEIVE_PODCAST_EPISODES,
-    podcast
+    episodes
   }
 }
