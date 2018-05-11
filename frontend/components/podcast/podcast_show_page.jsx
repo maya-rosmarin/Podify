@@ -1,4 +1,5 @@
 import React from 'react';
+import FaMusic from 'react-icons/lib/fa/music';
 
 class PodcastShowPage extends React.Component {
   constructor (props) {
@@ -28,11 +29,11 @@ class PodcastShowPage extends React.Component {
     let podcast, episodes;
     if (this.props.currentPodcast) {
       debugger
-      podcast = <li><img className="podcast-artwork" src={this.props.currentPodcast.artworkUrl600} /></li>
+      podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
         if (this.props.currentPodcastEpisodes) {
           debugger
           episodes = this.props.currentPodcastEpisodes.map((episode) =>
-            <li>{episode.title}</li>
+            <div><button className="musical-note-button">< FaMusic /></button>    {episode.title}   <div>{episode.summary}</div></div>
           )
         }
     } else {
@@ -40,9 +41,11 @@ class PodcastShowPage extends React.Component {
     let title = this.props.match.params.collectionName;
     return (
       <div className="podcast-episode-index">
+        <div>
         <h1 className="show-page-title">{title}</h1>
-        <p className="podcast-artwork-show">{podcast}</p>
-        <p className="episode-index-item">{episodes}</p>
+        <div className="podcast-show-art">{podcast}</div>
+        </div>
+        <div className="episode-index-item"><p>{episodes}</p></div>
       </div>
     )
   }

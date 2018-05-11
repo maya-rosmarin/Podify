@@ -3,13 +3,28 @@
   font-size: 56px;
   font-weight: 800;
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .episode-index-item {
-  color: white;
-  text-decoration: none;
+  color: #adb0b5;
+  list-style-type: none;
+  display: flex;
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 .podcast-episode-index {
   text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+}
+
+.podcast-show-art {
+  width: 350px;
+}
+
+.episode-summary {
+  display: none;
 }
