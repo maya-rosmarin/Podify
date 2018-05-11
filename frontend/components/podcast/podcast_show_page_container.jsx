@@ -3,7 +3,6 @@ import PodcastShowPage from './podcast_show_page';
 import { requestAllPodcasts, requestSinglePodcast, requestPodcastEpisodes } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     collectionName: ownProps.match.params.collectionName,
     currentPodcast: state.entities.remotePodcasts[ownProps.match.params.collectionName],

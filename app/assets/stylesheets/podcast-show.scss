@@ -1,5 +1,5 @@
 .show-page-title {
-  color: #767676;
+  color: #c4c4c4;
   font-size: 56px;
   font-weight: 800;
   padding-left: 10px;
@@ -13,7 +13,7 @@
   padding-left: 50px;
   padding-top: 50px;
   line-height: 2;
-  justify-content: flex-start;
+  // justify-content: flex-start;
   align-items: center;
 }
 
@@ -31,4 +31,8 @@
 .episode-summary {
   opacity: 0.0;
    -webkit-transition: all 500ms ease-in-out;
+}
+
+.episode-index-item:hover {
+  background-color: #3d423f;
 }

@@ -20,7 +20,6 @@ export const fetchSinglePodcast = (searchQuery) => {
 }
 
 export const fetchPodcastEpisodes = (feed_url) => {
-  debugger
   return $.ajax({
     method: 'GET',
     url: 'api/podcasts/get_episodes',

@@ -1,5 +1,5 @@
 import React from 'react';
-import FaMusic from 'react-icons/lib/fa/music';
+import Episode from '../episode/episode';
 
 class PodcastShowPage extends React.Component {
   constructor (props) {
@@ -15,12 +15,10 @@ class PodcastShowPage extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    debugger
     if (this.props.match.params.collectionName !== nextProps.match.params.collectionName) {
       this.props.requestSinglePodcast(nextProps.match.params.collectionName)
     };
     if (!this.props.currentPodcast && nextProps.currentPodcast) {
-      debugger
       this.props.requestPodcastEpisodes(nextProps.currentPodcast.feedUrl)
     }
   }
@@ -28,12 +26,9 @@ class PodcastShowPage extends React.Component {
   render () {
     let podcast, episodes;
     if (this.props.currentPodcast) {
-      debugger
       podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
         if (this.props.currentPodcastEpisodes) {
-          debugger
-          episodes = this.props.currentPodcastEpisodes.map((episode) =>
-            <div><button className="musical-note-button">< FaMusic /></button>    {episode.title}   </div>
+          episodes = this.props.currentPodcastEpisodes.map((episode) => <Episode episode={episode} />
           )
         }
     } else {

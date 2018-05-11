@@ -9,7 +9,6 @@ export const requestAllPodcasts = (searchQuery) => {
     return SearchApiUtil.fetchAllPodcasts(searchQuery)
       .then(null,
         (response) => {
-          debugger
           dispatch(receiveAllPodcasts(JSON.parse(response.responseText).results))
         })
   };

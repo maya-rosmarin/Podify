@@ -12,7 +12,6 @@ export default (state = {}, action) => {
       otherNewState[action.podcast.collectionName] = action.podcast;
       return otherNewState;
     case RECEIVE_PODCAST_EPISODES:
-    debugger
       return merge({}, state, {episodes: action.episodes})
     default:
       return state;
