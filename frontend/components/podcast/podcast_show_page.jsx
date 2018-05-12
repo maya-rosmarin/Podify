@@ -4,6 +4,7 @@ import Episode from '../episode/episode';
 class PodcastShowPage extends React.Component {
   constructor (props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {
@@ -23,12 +24,21 @@ class PodcastShowPage extends React.Component {
     }
   }
 
+  handleSubmit (e) {
+    e.preventDefault();
+    
+  }
+
   render () {
     let podcast, episodes;
     if (this.props.currentPodcast) {
       podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
         if (this.props.currentPodcastEpisodes) {
-          episodes = this.props.currentPodcastEpisodes.map((episode) => <Episode episode={episode} />
+          episodes = this.props.currentPodcastEpisodes.map((episode) =>
+          <form onSubmit={this.handleSubmit}>
+          <Episode episode={episode} />
+          <button>Save to My Podcasts</button>
+          </form>
           )
         }
     } else {

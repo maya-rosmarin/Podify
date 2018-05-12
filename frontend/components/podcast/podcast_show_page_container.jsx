@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import PodcastShowPage from './podcast_show_page';
 import { requestAllPodcasts, requestSinglePodcast, requestPodcastEpisodes } from '../../actions/search_actions';
+import { saveSinglePodcastEpisode } from '../../actions/podcast_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -20,6 +21,9 @@ const mapDispatchToProps = dispatch => {
     },
     requestPodcastEpisodes: (feedUrl) => {
       return dispatch(requestPodcastEpisodes(feedUrl))
+    },
+    saveSinglePodcastEpisode: (episode) => {
+      return dispatch(saveSinglePodcastEpisode(episode))
     }
   };
 };

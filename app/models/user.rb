@@ -19,6 +19,15 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :user_podcasts,
+    class_name: :UserPodcast,
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :podcasts,
+    through: :user_podcasts,
+    source: :podcast
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
