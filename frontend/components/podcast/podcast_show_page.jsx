@@ -4,6 +4,7 @@ import Episode from '../episode/episode';
 class PodcastShowPage extends React.Component {
   constructor (props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount () {
@@ -23,26 +24,45 @@ class PodcastShowPage extends React.Component {
     }
   }
 
-  render () {
-    let podcast, episodes;
-    if (this.props.currentPodcast) {
-      podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
-        if (this.props.currentPodcastEpisodes) {
-          episodes = this.props.currentPodcastEpisodes.map((episode) => <Episode episode={episode} />
-          )
-        }
-    } else {
+  handleSubmit (episode) {
+    return (e) => {
+      debugger
+      e.preventDefault();
+      this.props.saveSinglePodcastEpisode(episode)
     }
-    let title = this.props.match.params.collectionName;
-    return (
-      <div className="podcast-episode-index">
-        <div>
-        <h1 className="show-page-title">{title}</h1>
-        <div className="podcast-show-art">{podcast}</div>
-        </div>
-        <div className="episode-index">{episodes}</div>
-      </div>
-    )
   }
+
+  render () {
+      let podcast, episodes, title;
+      debugger
+      if (this.props.currentPodcast) {
+        podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
+        title = this.props.currentPodcast.title
+          if (this.props.currentPodcastEpisodes) {
+            debugger
+            episodes = this.props.currentPodcastEpisodes.map((episode) => {
+              debugger
+            return (
+              <form onSubmit={this.handleSubmit(episode)}>
+              <Episode key={episode.collectionId} episode={episode} />
+              <button>Save</button>
+            </form>
+            )
+          }
+        )
+      }
+    } else {
+      title = this.props.match.params.collectionName;
+      }
+      return (
+        <div className="podcast-episode-index">
+          <div>
+          <h1 className="show-page-title">{title}</h1>
+          <div className="podcast-show-art">{podcast}</div>
+          </div>
+          <div className="episode-index">{episodes}</div>
+        </div>
+      )
+    }
 };
 export default PodcastShowPage;

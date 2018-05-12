@@ -20,6 +20,9 @@ const mapDispatchToProps = dispatch => {
     },
     requestPodcastEpisodes: (feedUrl) => {
       return dispatch(requestPodcastEpisodes(feedUrl))
+    },
+    saveSinglePodcastEpisode: (episode) => {
+      return dispatch(saveSinglePodcastEpisode(episode))
     }
   };
 };

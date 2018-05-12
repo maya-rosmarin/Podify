@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     get('podcasts/get_episodes', {to: 'podcasts#get_episodes'})
+    resources :playlists, only: [:create, :update, :destroy]
+    resources :episodes, only: [:create, :destroy]
   end
 
 end
