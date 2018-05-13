@@ -26,7 +26,6 @@ class PodcastShowPage extends React.Component {
 
   handleSubmit (episode) {
     return (e) => {
-      debugger
       e.preventDefault();
       this.props.saveSinglePodcastEpisode(episode)
     }
@@ -34,12 +33,10 @@ class PodcastShowPage extends React.Component {
 
   render () {
       let podcast, episodes, title;
-      debugger
       if (this.props.currentPodcast) {
         podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
         title = this.props.currentPodcast.title
           if (this.props.currentPodcastEpisodes) {
-            debugger
             episodes = this.props.currentPodcastEpisodes.map((episode) => {
               debugger
             return (

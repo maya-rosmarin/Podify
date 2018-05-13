@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import PodcastShowPage from './podcast_show_page';
 import { requestAllPodcasts, requestSinglePodcast, requestPodcastEpisodes } from '../../actions/search_actions';
+import { saveSinglePodcastEpisode } from '../../actions/episode_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
