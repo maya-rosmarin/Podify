@@ -1,5 +1,6 @@
 import React from 'react';
 import Episode from '../episode/episode';
+import FaDownload from 'react-icons/lib/fa/download';
 
 class PodcastShowPage extends React.Component {
   constructor (props) {
@@ -40,9 +41,9 @@ class PodcastShowPage extends React.Component {
             episodes = this.props.currentPodcastEpisodes.map((episode) => {
               debugger
             return (
-              <form onSubmit={this.handleSubmit(episode)}>
-              <Episode key={episode.collectionId} episode={episode} />
-              <button>Save</button>
+              <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
+                <Episode key={episode.collectionId} episode={episode} />
+                <button className="save-button"><FaDownload /></button>
             </form>
             )
           }

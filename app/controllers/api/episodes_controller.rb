@@ -2,7 +2,7 @@ class Api::EpisodesController < ApplicationController
 
   def create
     @episode = Episode.new(episode_params)
-    @current_user = current_user
+    @user_id = current_user_id
     if @episode.save
       render :create
     else

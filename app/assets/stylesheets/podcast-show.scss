@@ -34,6 +34,36 @@
    -webkit-transition: all 500ms ease-in-out;
 }
 
+.music-note {
+  padding-right: 15px;
+}
+
+.episode-index-item {
+  display: flex;
+  flex-direction: row;
+  padding-right: 15px;
+}
+
 .episode-index-item:hover {
   background-color: #3d423f;
+}
+
+.summary-hover {
+  visibility: hidden;
+  width: 40%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.episode-index-item:hover .summary-hover {
+  visibility: visible;
 }

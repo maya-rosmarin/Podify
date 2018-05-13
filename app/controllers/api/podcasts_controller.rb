@@ -4,7 +4,6 @@ class Api::PodcastsController < ApplicationController
     @episodes = Feedjira::Feed.fetch_and_parse(params[:feed_url]).entries
     render 'api/podcasts/episodes'
     @current_user_id = current_user_id
-    debugger
   end
 
 end
