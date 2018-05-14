@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     get('podcasts/get_episodes', {to: 'podcasts#get_episodes'})
     resources :playlists, only: [:create, :update, :destroy]
-    resources :episodes, only: [:create, :destroy]
+    resources :episodes, only: [:index, :create, :destroy]
   end
 
 end

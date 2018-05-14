@@ -1,8 +1,11 @@
 class Api::EpisodesController < ApplicationController
 
+  def index
+    @episodes = Episode.where(user_id: params[:user_id])
+  end
+
   def create
     @episode = Episode.new(episode_params)
-    # @user_id = current_user_id
     @episode.user_id = current_user_id
     debugger
     if @episode.save

@@ -13,6 +13,6 @@ class UserEpisode < ApplicationRecord
 
   belongs_to :user
 
-  belongs_to :episode, inverse_of: :user_episodes
+  belongs_to :episode
 
 end

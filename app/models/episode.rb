@@ -27,9 +27,7 @@ class Episode < ApplicationRecord
     source: :playlist
 
   has_many :user_episodes,
-    inverse_of: :episode,
-    foreign_key: :episode_id,
-    primary_key: :id
+    inverse_of: :episode
 
   has_many :users,
     through: :user_episodes,

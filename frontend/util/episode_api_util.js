@@ -1,4 +1,3 @@
-// save single episode under current user in database
 export const saveSinglePodcastEpisode = (episode) => {
   debugger
   return $.ajax({
@@ -7,3 +6,11 @@ export const saveSinglePodcastEpisode = (episode) => {
     data: {episode: episode}
   });
 };
+
+export const fetchAllUserEpisodes = (user_id) => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/episodes',
+    data: { user_id }
+  })
+}

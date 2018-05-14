@@ -36,7 +36,7 @@ class PodcastShowPage extends React.Component {
       let podcast, episodes, title;
       if (this.props.currentPodcast) {
         podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
-        title = this.props.currentPodcast.title
+          title = this.props.match.params.collectionName;
           if (this.props.currentPodcastEpisodes) {
             episodes = this.props.currentPodcastEpisodes.map((episode) => {
               debugger
@@ -55,8 +55,11 @@ class PodcastShowPage extends React.Component {
       return (
         <div className="podcast-episode-index">
           <div>
-          <h1 className="show-page-title">{title}</h1>
-          <div className="podcast-show-art">{podcast}</div>
+            <h1 className="show-page-title">{title}</h1>
+            <br />
+            <br />
+            <br />
+            <div className="podcast-show-art">{podcast}</div>
           </div>
           <div className="episode-index">{episodes}</div>
         </div>
