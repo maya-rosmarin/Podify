@@ -14,7 +14,10 @@ export default (props) => {
       <li className="top-two-nav"><Link className="search-link" to="/search"><FaSearch className="nav-icon" />     Search</Link>
       <br />
       <br />
-      <Link className="search-link" to="/"><FaHome className="nav-icon" />     Home</Link></li>
+      <Link className="search-link" to="/"><FaHome className="nav-icon" />     Home</Link>
+      <br />
+      <br />
+      <Link className="search-link" to="/my_podcasts"><FaVolumeUp className="nav-icon"/>       Your Podcasts</Link></li>
       <div className="nav-bottom">
         <li><button className="logout-button" onClick={props.logout}><FaSignout />     Logout</button></li>
         <li className="username">  <FaUser />  {props.currentUser.username}</li>

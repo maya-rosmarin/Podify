@@ -1,4 +1,5 @@
 import React from 'react';
+import Episode from '../episode/episode';
 
 class MyPodcasts extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class MyPodcasts extends React.Component {
     if (this.props.my_episodes) {
       debugger
       episodes = this.props.my_episodes.map((episode) => {
-        return <li>{episode.title}</li>
+        return <li><Episode episode={episode} /></li>
       })
       debugger
     } else {
@@ -24,7 +25,8 @@ class MyPodcasts extends React.Component {
     debugger
     return (
       <div>
-        {episodes}
+        <h1 className="show-page-title">Your Podcasts</h1>
+        <div className="episode-index">{episodes}</div>
       </div>
     )
   }
