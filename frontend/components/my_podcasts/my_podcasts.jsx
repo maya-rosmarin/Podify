@@ -11,13 +11,17 @@ class MyPodcasts extends React.Component {
 
   render () {
     let episodes;
+    debugger
     if (this.props.my_episodes) {
-      episodes = this.my_episodes.map((episode) => {
-        <li>{episode.title}</li>
+      debugger
+      episodes = this.props.my_episodes.map((episode) => {
+        return <li>{episode.title}</li>
       })
+      debugger
     } else {
       episodes = "";
     }
+    debugger
     return (
       <div>
         {episodes}

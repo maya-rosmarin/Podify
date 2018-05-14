@@ -7,7 +7,6 @@ class Api::EpisodesController < ApplicationController
   def create
     @episode = Episode.new(episode_params)
     @episode.user_id = current_user_id
-    debugger
     if @episode.save
       UserEpisode.create({episode_id: @episode.id, user_id: current_user_id})
       render :create

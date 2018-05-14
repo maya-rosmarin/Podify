@@ -1,5 +1,4 @@
 export const saveSinglePodcastEpisode = (episode) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: 'api/episodes',

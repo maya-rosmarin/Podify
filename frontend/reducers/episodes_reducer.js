@@ -2,7 +2,6 @@ import { SAVE_PODCAST_EPISODE, RECEIVE_ALL_USER_EPISODES } from '../actions/epis
 import { merge } from 'lodash';
 
 export default (state = {}, action) => {
-  debugger
   switch (action.type) {
     case SAVE_PODCAST_EPISODE:
       const newState = merge({}, state)

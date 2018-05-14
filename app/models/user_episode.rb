@@ -11,6 +11,9 @@
 
 class UserEpisode < ApplicationRecord
 
+  validates_uniqueness_of :episode_id, scope: :user_id
+  validates_uniqueness_of :user_id, scope: :episode_id
+
   belongs_to :user
 
   belongs_to :episode
