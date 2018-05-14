@@ -19,6 +19,12 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :user_episodes, inverse_of: :user
+
+  has_many :episodes,
+    through: :user_episodes,
+    source: :episode
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end

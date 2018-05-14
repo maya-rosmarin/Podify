@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import SearchFormContainer from '../search/search_form_container';
 import Nav from '../nav/nav';
+import Audio from '../audio/audio';
 import PodcastShowPageContainer from '../podcast/podcast_show_page_container';
 
 const Main = (props) => {
