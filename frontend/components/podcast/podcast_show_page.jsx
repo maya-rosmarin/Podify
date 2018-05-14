@@ -5,7 +5,7 @@ import FaDownload from 'react-icons/lib/fa/download';
 class PodcastShowPage extends React.Component {
   constructor (props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {
@@ -39,7 +39,7 @@ class PodcastShowPage extends React.Component {
           title = this.props.match.params.collectionName;
           if (this.props.currentPodcastEpisodes) {
             episodes = this.props.currentPodcastEpisodes.map((episode) => {
-              debugger
+              
             return (
               <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
                 <Episode episode={episode} />

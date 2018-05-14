@@ -1,6 +1,9 @@
-json.array! @episodes do |episode|
-  json.title episode.title
-  json.summary episode.summary
-  json.audio episode.audio
-  json.itunes_author episode.itunes_author
+@episodes.each do |episode|
+  json.set! episode.id do
+    json.id episode.id
+    json.title episode.title
+    json.summary episode.summary
+    json.audio episode.audio
+    json.itunes_author episode.itunes_author
+  end
 end

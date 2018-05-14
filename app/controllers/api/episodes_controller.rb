@@ -1,7 +1,8 @@
 class Api::EpisodesController < ApplicationController
 
   def index
-    @episodes = current_user.user_episodes.map(&:episode)
+    @episodes = current_user.episodes
+    render :index
   end
 
   def create
@@ -11,11 +12,14 @@ class Api::EpisodesController < ApplicationController
       UserEpisode.create({episode_id: @episode.id, user_id: current_user_id})
       render :create
     else
-      render json: @episode.errors.full_messages, status: 420
+      render json: @episode.errors.full_messages, status: 402
     end
   end
 
   def destroy
+    @episode = Episode.find(params[:id])
+    @episode.destroy
+    render :destroy
   end
 
   private

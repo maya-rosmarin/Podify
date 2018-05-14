@@ -5,16 +5,16 @@ import MyPodcasts from './my_podcasts';
 
 const mapStateToProps = (state) => {
   return {
-    my_episodes: state.entities.localPodcasts.episodes,
+    my_episodes: Object.values(state.entities.localPodcasts),
     currentUserId: state.session.id
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllUserEpisodes: (user_id) => { return dispatch(fetchAllUserEpisodes(user_id)) },
-    deleteSinglePodcastEpisode: (episode) => {
-      return dispatch(deleteSinglePodcastEpisode(episode))
+    fetchAllUserEpisodes: () => { return dispatch(fetchAllUserEpisodes()) },
+    deleteSinglePodcastEpisode: (episodeId) => {
+      return dispatch(deleteSinglePodcastEpisode(episodeId))
     }
   }
 }

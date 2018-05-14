@@ -1,5 +1,4 @@
 export const saveSinglePodcastEpisode = (episode) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: 'api/episodes',
@@ -7,18 +6,16 @@ export const saveSinglePodcastEpisode = (episode) => {
   });
 };
 
-export const fetchAllUserEpisodes = (user_id) => {
+export const fetchAllUserEpisodes = () => {
   return $.ajax({
     method: 'GET',
-    url: 'api/episodes',
-    data: { user_id }
+    url: 'api/episodes'
   })
 }
 
-export const deleteUserEpisode = (episode_id) => {
+export const deleteUserEpisode = (episodeId) => {
   return $.ajax({
     method: 'DELETE',
-    url: 'api/episodes',
-    data: { episode_id }
+    url: `api/episodes/${episodeId}`
   })
 }
