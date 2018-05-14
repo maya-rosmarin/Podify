@@ -36,6 +36,7 @@
 
 .music-note {
   padding-right: 15px;
+  cursor: pointer;
 }
 
 .episode-index-item {
@@ -50,7 +51,7 @@
 
 .summary-hover {
   visibility: hidden;
-  width: 40%;
+  width: 30%;
   background-color: white;
   color: black;
   text-align: center;

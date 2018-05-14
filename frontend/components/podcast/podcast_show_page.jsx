@@ -42,7 +42,7 @@ class PodcastShowPage extends React.Component {
               debugger
             return (
               <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
-                <Episode key={episode.collectionId} episode={episode} />
+                <Episode episode={episode} />
                 <button className="save-button"><FaDownload /></button>
             </form>
             )
