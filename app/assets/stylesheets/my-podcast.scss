@@ -1,0 +1,14 @@
+.my-podcast-index-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.trashcan {
+  margin-top: 8px;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.my-podcast-index-item:hover .trashcan {
+  visibility: visible;
+}

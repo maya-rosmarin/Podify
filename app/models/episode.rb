@@ -29,6 +29,8 @@ class Episode < ApplicationRecord
   has_many :user_episodes,
     inverse_of: :episode
 
+  # has_many :user_episodes
+
   has_many :users,
     through: :user_episodes,
     source: :user

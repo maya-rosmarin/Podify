@@ -1,5 +1,6 @@
 import React from 'react';
 import Episode from '../episode/episode';
+import FaTrashCan from 'react-icons/lib/fa/trash';
 
 class MyPodcasts extends React.Component {
   constructor(props) {
@@ -16,9 +17,8 @@ class MyPodcasts extends React.Component {
     if (this.props.my_episodes) {
       debugger
       episodes = this.props.my_episodes.map((episode) => {
-        return <li><Episode episode={episode} /></li>
+        return <li className="my-podcast-index-item episode-index-item"><Episode episode={episode} /><FaTrashCan className="trashcan"/></li>
       })
-      debugger
     } else {
       episodes = "";
     }

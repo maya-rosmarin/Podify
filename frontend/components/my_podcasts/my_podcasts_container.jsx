@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAllUserEpisodes } from '../../actions/episode_actions';
+import { fetchAllUserEpisodes, deleteSinglePodcastEpisode } from '../../actions/episode_actions';
 import MyPodcasts from './my_podcasts';
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllUserEpisodes: (user_id) => { return dispatch(fetchAllUserEpisodes(user_id)) }
+    fetchAllUserEpisodes: (user_id) => { return dispatch(fetchAllUserEpisodes(user_id)) },
+    deleteSinglePodcastEpisode: (episode) => {
+      return dispatch(deleteSinglePodcastEpisode(episode))
+    }
   }
 }
 
