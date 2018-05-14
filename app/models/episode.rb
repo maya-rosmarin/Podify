@@ -15,7 +15,7 @@
 
 class Episode < ApplicationRecord
 
-  validates :title, :itunes_author, presence: true
+  validates :title, :itunes_author, :user_id, presence: true
 
   has_many :playlist_episodes,
     class_name: :PlaylistEpisode,
@@ -26,11 +26,9 @@ class Episode < ApplicationRecord
     through: :playlist_episodes,
     source: :playlist
 
-  has_many :users, inverse_of: :episode
-
   has_many :user_episodes,
-    class_name: :UserEpisode,
-    foreign_key: :podcast_id,
+    inverse_of: :episode,
+    foreign_key: :episode_id,
     primary_key: :id
 
   has_many :users,

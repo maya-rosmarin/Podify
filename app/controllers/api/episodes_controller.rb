@@ -2,8 +2,11 @@ class Api::EpisodesController < ApplicationController
 
   def create
     @episode = Episode.new(episode_params)
-    @user_id = current_user_id
+    # @user_id = current_user_id
+    @episode.user_id = current_user_id
+    debugger
     if @episode.save
+      UserEpisode.create({episode_id: @episode.id, user_id: current_user_id})
       render :create
     else
       render json: @episode.errors.full_messages, status: 420

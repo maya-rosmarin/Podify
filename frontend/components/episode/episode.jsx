@@ -33,7 +33,7 @@ class Episode extends React.Component {
     return (
       <div className="episode-index-item"><div className="musical-note-button"><div className="music-note" onClick={this.play}> {this.state.playIcon}</div></div>    {this.props.episode.title}
         <div className="summary-hover">{this.props.episode.summary}</div>
-        <audio src={this.props.episode.audio} src={this.props.episode.audio} ref={(audio) => this.audio = audio} ></audio>
+        <audio src={this.props.episode.audio} ref={(audio) => this.audio = audio} ></audio>
       </div>
     )
   }
