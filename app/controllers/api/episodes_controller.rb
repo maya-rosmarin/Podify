@@ -1,7 +1,6 @@
 class Api::EpisodesController < ApplicationController
 
   def index
-    # @episodes = UserEpisode.where(user_id: current_user_id)
     @episodes = current_user.user_episodes.map(&:episode)
   end
 

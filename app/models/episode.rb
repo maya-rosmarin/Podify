@@ -15,7 +15,7 @@
 
 class Episode < ApplicationRecord
 
-  validates :title, :itunes_author, :user_id, presence: true
+  validates :title, :user_id, presence: true
 
   has_many :playlist_episodes,
     class_name: :PlaylistEpisode,
@@ -28,8 +28,6 @@ class Episode < ApplicationRecord
 
   has_many :user_episodes,
     inverse_of: :episode
-
-  # has_many :user_episodes
 
   has_many :users,
     through: :user_episodes,
