@@ -1,9 +1,10 @@
 import React from 'react';
 import EpisodeContainer from '../episode/episode_container';
 import FaTrashCan from 'react-icons/lib/fa/trash';
+import FaPlus from 'react-icons/lib/fa/plus';
 
 class MyPodcasts extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -24,7 +25,9 @@ class MyPodcasts extends React.Component {
     if (this.props.my_episodes) {
       episodes = this.props.my_episodes.map((episode) => {
         return <li className="my-podcast-index-item episode-index-item"><EpisodeContainer episode={episode} collectionName={this.props.collectionName} />
-        <form onSubmit={this.handleDelete(episode.id)}><button><FaTrashCan className="trashcan"/></button></form></li>
+        <form><button><FaPlus className="trashcan" /></button></form>
+        <form onSubmit={this.handleDelete(episode.id)}><button><FaTrashCan className="trashcan"/></button></form>
+    </li>
       })
     } else {
       episodes = "";
@@ -35,11 +38,11 @@ class MyPodcasts extends React.Component {
         <br />
         <br />
         <br />
-        <button className="green-button" id="narrow-button">PLAY</button>
         <div className="episode-index">{episodes}</div>
       </div>
     )
   }
 }
+// <button className="green-button" id="narrow-button">PLAY</button>
 
 export default MyPodcasts;

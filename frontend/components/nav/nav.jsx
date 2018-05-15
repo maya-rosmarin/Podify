@@ -14,7 +14,7 @@ export default (props) => {
       <li className="top-two-nav"><Link className="search-link" to="/search"><FaSearch className="nav-icon" />     Search</Link>
       <br />
       <br />
-      <Link className="search-link" to="/"><FaHome className="nav-icon" />     Home</Link>
+      <Link className="search-link" to="/home"><FaHome className="nav-icon" />     Home</Link>
       <br />
       <br />
       <Link className="search-link" to="/my_podcasts"><FaVolumeUp className="nav-icon"/>       Your Podcasts</Link></li>

@@ -2,15 +2,16 @@
 #
 # Table name: episodes
 #
-#  id            :bigint(8)        not null, primary key
-#  title         :string
-#  summary       :text
-#  audio         :string
-#  itunes_author :string
-#  itunes_image  :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  user_id       :integer
+#  id              :bigint(8)        not null, primary key
+#  title           :string
+#  summary         :text
+#  audio           :string
+#  itunes_author   :string
+#  itunes_image    :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer
+#  collection_name :string
 #
 
 class Episode < ApplicationRecord

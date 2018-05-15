@@ -24,7 +24,7 @@ class Playlist < ApplicationRecord
     primary_key: :id
 
   has_many :episodes,
-    through: :playlist_podcasts,
+    through: :playlist_episodes,
     source: :episode
 
 end

@@ -3,3 +3,29 @@
   flex-direction: row;
   background: #525952;
 }
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page {
+  color: #c4c4c4;
+  font-size: 36px;
+  font-weight: 800;
+  padding-left: 10px;
+  z-index: 1;
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+
+tiles {
+  display: flex;
+  flex-direction: row;
+}
+
+.tile {
+  height: 250px;
+  width: auto;
+  margin: 30px;
+}
