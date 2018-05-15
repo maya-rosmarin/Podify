@@ -9,15 +9,19 @@ class Audio extends React.Component {
     super(props);
   }
 
-  handleClick () {
-    return (e) => {
-      e.preventDefault();
-      if (this.props.currentEpisodePlaying === false) {
-        this.props.playCurrentEpisode();
-      } else {
-        this.props.pauseCurrentEpisode();
-      }
-    }
+  handleClick (e) {
+    e.preventDefault();
+    this.play();
+  }
+
+  play () {
+    if (this.props.currentEpisodePlaying === false) {
+      this.audio.play()
+      this.props.currentEpisodePlaying = true
+    } else if (this.props.currentEpisodePlaying === true) {
+      this.audio.pause()
+      this.props.currentEpisodePlaying = false
+    };
   }
 
   render () {
@@ -35,7 +39,7 @@ class Audio extends React.Component {
           <button>
             <div className="audio-player-skip skip-left">|<FaLeft className="skip-back" /></div>
           </button>
-          <button onClick={this.handleClick()}>
+          <button onClick={this.handleClick}>
             <FaPlay className="audio-player-play-pause" />
           </button>
           <button>
