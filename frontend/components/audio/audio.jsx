@@ -29,15 +29,20 @@ class Audio extends React.Component {
       <div className="audio-player">
         <center>
           <button>
-            <div className="audio-player-skip">|<FaLeft className="skip-back" /></div>
+            <div className="audio-player-skip skip-left">|<FaLeft className="skip-back" /></div>
           </button>
           <button>
             <FaPlay className="audio-player-play-pause" />
           </button>
           <button>
-            <div className="audio-player-skip"><FaRight className="skip" />|</div>
+            <div className="audio-player-skip skip-right"><FaRight className="skip" />|</div>
           </button>
         </center>
+        <right>
+          <div className="slidecontainer">
+            <input type="range" min="1" max="100" value="50" className="slider" id="myRange"></input>
+          </div>
+        </right>
       </div>
     )
   }

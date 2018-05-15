@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactAudioPlayer from 'react-audio-player';
 
 class Episode extends React.Component {
   constructor (props) {
