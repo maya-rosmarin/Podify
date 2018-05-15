@@ -22,10 +22,18 @@
 tiles {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
 }
 
 .tile {
   height: 250px;
   width: auto;
   margin: 30px;
+}
+
+.rec-text {
+  color: #c4c4c4;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
 }
