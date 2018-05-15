@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import { setCurrentEpisode, playCurrentEpisode, pauseCurrentEpisode } from '../../actions/audio_actions'
-import Audio from './audio';
+import Episode from './episode';
 
 const mapStateToProps = state => {
-  debugger
   return {
     currentEpisodeId: state.audio.currentEpisodeId,
     currentEpisode: state.entities.localPodcasts[state.audio.currentEpisodeId],
@@ -19,4 +18,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Audio);
+export default connect(mapStateToProps, mapDispatchToProps)(Episode);

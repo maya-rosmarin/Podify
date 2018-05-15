@@ -7,31 +7,35 @@ import FaLeft from 'react-icons/lib/fa/caret-left'
 class Audio extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      play: false,
-      playIcon: <FaPlay />
-    }
-    this.play = this.play.bind(this);
   }
 
-  play () {
+  handleClick () {
+    return (e) => {
+      e.preventDefault();
+      if (this.props.currentEpisodePlaying === false) {
+        this.props.playCurrentEpisode();
+      } else {
+        this.props.pauseCurrentEpisode();
+      }
+    }
   }
-  // if (this.state.play === false) {
-  //   this.audio.play()
-  //   this.setState({play: true})
-  // } else {
-  //   this.audio.pause()
-  //   this.setState({play: false})
-  // };
 
   render () {
+    let audio;
+    if (this.props.currentEpisode) {
+      debugger
+      audio = <audio src={this.props.currentEpisode.audio} controls ref={(audio) => this.audio = audio} ></audio>
+    } else {
+      audio = "";
+    };
     return (
       <div className="audio-player">
         <center>
+          {audio}
           <button>
             <div className="audio-player-skip skip-left">|<FaLeft className="skip-back" /></div>
           </button>
-          <button>
+          <button onClick={this.handleClick()}>
             <FaPlay className="audio-player-play-pause" />
           </button>
           <button>
@@ -47,11 +51,5 @@ class Audio extends React.Component {
     )
   }
 }
-// {this.props.episode.audio} to be replaced by smoething by store to set currently playing podcast
-// slice of state for current song under UI --> setCurrentSong, play, pause
-// connect to dispatch of play and pause
-// connect to current song thorugh container
-// currentsong informatoin sent up by playlist or episode
-// <audio src={this.props.currentlyPlaying.audio} ref={(audio) => this.audio = audio} ></audio>
 
 export default Audio;

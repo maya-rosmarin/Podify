@@ -7,7 +7,6 @@ export const DELETE_PODCAST_EPISODE = 'DELETE_PODCAST_EPISODE';
 export const saveSinglePodcastEpisode = (episode) => {
   return (dispatch) => {
     return EpisodeApiUtil.saveSinglePodcastEpisode(episode).then(episode => {
-      debugger
       dispatch(receiveSinglePodcastEpisode(episode))
     })
   }
