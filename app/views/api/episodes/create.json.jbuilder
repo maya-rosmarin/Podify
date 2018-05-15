@@ -4,4 +4,5 @@ json.set! @episode.id do
   json.summary @episode.summary
   json.audio @episode.audio
   json.itunes_author @episode.itunes_author
+  json.collection_name @episode.collection_name
 end

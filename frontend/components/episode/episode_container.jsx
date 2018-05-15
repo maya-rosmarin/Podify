@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { setCurrentEpisode, playCurrentEpisode, pauseCurrentEpisode } from '../../actions/audio_actions'
 import Episode from './episode';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     currentEpisodeId: state.audio.currentEpisodeId,
     currentEpisode: state.entities.localPodcasts[state.audio.currentEpisodeId],
-    currentEpisodePlaying: state.audio.currentEpisodePlaying
+    currentEpisodePlaying: state.audio.currentEpisodePlaying,
+    image: ownProps.image
   }
 };
 

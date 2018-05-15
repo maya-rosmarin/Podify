@@ -28,6 +28,8 @@ class PodcastShowPage extends React.Component {
   handleSubmit (episode) {
     return (e) => {
       e.preventDefault();
+      debugger
+      episode.collection_name = localStorage.getItem('collectionName')
       this.props.saveSinglePodcastEpisode(episode)
     }
   }
@@ -37,12 +39,13 @@ class PodcastShowPage extends React.Component {
       if (this.props.currentPodcast) {
         podcast = <div><img src={this.props.currentPodcast.artworkUrl600} /></div>
           title = this.props.match.params.collectionName;
+          localStorage.setItem("collectionName", title);
           if (this.props.currentPodcastEpisodes) {
             episodes = this.props.currentPodcastEpisodes.map((episode) => {
 
             return (
               <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
-                <EpisodeContainer episode={episode} />
+                <EpisodeContainer episode={episode} collectionName={this.props.collectionName} image={this.props.currentPodcast.artworkUrl600}/>
                 <button className="save-button"><FaDownload /></button>
             </form>
             )

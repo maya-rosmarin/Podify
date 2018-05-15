@@ -23,16 +23,20 @@ class Episode extends React.Component {
   }
 
   render () {
-    let playIcon;
+    let playIcon, collection_name;
     if (this.props.episode.id === this.props.currentEpisodeId && this.props.currentEpisodePlaying) {
       playIcon = <FaPause onClick={this.handleClick} />
     } else {
       playIcon = <FaPlay onClick={this.handleClick}/>
     }
+    if (this.props.episode.collection_name) {
+      collection_name = ` - ${this.props.episode.collection_name}`
+    }
+    debugger
     return (
       <div className="episode-index-item">
         <div className="musical-note-button">
-          <div className="music-note">  {playIcon}{this.props.episode.title}</div>
+          <div className="music-note">{playIcon}{this.props.episode.title}  {collection_name}</div>
             <div className="summary-hover">{this.props.episode.summary}
             </div>
         </div>

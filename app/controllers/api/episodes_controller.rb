@@ -2,6 +2,7 @@ class Api::EpisodesController < ApplicationController
 
   def index
     @episodes = current_user.episodes
+    # debugger
     render :index
   end
 
@@ -25,7 +26,7 @@ class Api::EpisodesController < ApplicationController
   private
 
   def episode_params
-    params.require(:episode).permit(:title, :itunes_author, :audio, :summary, :itunes_author, :user_id)
+    params.require(:episode).permit(:title, :itunes_author, :audio, :summary, :itunes_author, :user_id, :collection_name)
   end
 
 end

@@ -23,7 +23,7 @@ class MyPodcasts extends React.Component {
     let episodes;
     if (this.props.my_episodes) {
       episodes = this.props.my_episodes.map((episode) => {
-        return <li className="my-podcast-index-item episode-index-item"><EpisodeContainer episode={episode} /><div>{episode.itunes_author}</div>
+        return <li className="my-podcast-index-item episode-index-item"><EpisodeContainer episode={episode} collectionName={this.props.collectionName} />
         <form onSubmit={this.handleDelete(episode.id)}><button><FaTrashCan className="trashcan"/></button></form></li>
       })
     } else {
