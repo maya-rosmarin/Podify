@@ -3,7 +3,6 @@ import { setCurrentEpisode, playCurrentEpisode, pauseCurrentEpisode } from '../.
 import Audio from './audio';
 
 const mapStateToProps = state => {
-  debugger
   return {
     currentEpisodeId: state.audio.currentEpisodeId,
     currentEpisode: state.entities.localPodcasts[state.audio.currentEpisodeId],
