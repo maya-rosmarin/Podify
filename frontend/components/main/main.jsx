@@ -10,6 +10,7 @@ const Main = (props) => {
   return (
     <div className="main-container">
       <Nav className="nav-meta" currentUser={props.currentUser} logout={props.logout} />
+      <Audio />
       <Route path="/podcasts/:collectionName" component={PodcastShowPageContainer} />
       <Route exact path="/search" component={SearchFormContainer} />
       <Route path="/my_podcasts" component={MyPodcastsContainer} />

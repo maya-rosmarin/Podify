@@ -4,11 +4,16 @@
 }
 
 .trashcan {
-  margin-top: 8px;
   visibility: hidden;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .my-podcast-index-item:hover .trashcan {
   visibility: visible;
+}
+
+#narrow-button {
+  width: 200px;
+  margin-left: 40px;
 }
