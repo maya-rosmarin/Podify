@@ -7,7 +7,8 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount () {
-
+    debugger
+    this.props.fetchAllUserPlaylists(this.props.currentUserId)
   }
 
   handleDelete (playlistId) {
@@ -18,8 +19,16 @@ class PlaylistShow extends React.Component {
   }
 
   render () {
+    let currentPlaylistTitle;
+    if (this.props.currentPlaylist) {
+      debugger
+      currentPlaylistTitle = this.props.currentPlaylist.title
+    } else {
+      currentPlaylistTitle = "";
+    }
     return (
       <div>
+        <h1 className="show-page-title">{currentPlaylistTitle}</h1>
         <button className="playlist-button" onClick={this.handleDelete} >DELETE PLAYLIST</button>
       </div>
     )
