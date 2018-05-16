@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from '../modal/modal';
+import NewPlaylistFormContainer from './new_playlist_form_container';
 import { Link } from 'react-router-dom';
 
 class MyPlaylists extends React.Component {
@@ -25,7 +26,7 @@ class MyPlaylists extends React.Component {
         <h1 className="show-page-title">Your Playlists</h1>
         <Modal />
         <form>
-          <button className="playlist-button" onClick={() => this.props.openModal(<Modal />)}>NEW PLAYLIST</button>
+          <button className="playlist-button" onClick={() => this.props.openModal(<Modal component={<NewPlaylistFormContainer />}/>)}>NEW PLAYLIST</button>
         </form>
         <ul>{playlists}</ul>
       </div>

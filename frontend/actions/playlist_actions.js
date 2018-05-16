@@ -16,9 +16,9 @@ export const createNewPlaylist = (playlistTitle) => {
   }
 }
 
-export const addEpisodeToPlaylist = (episode, playlist) => {
+export const addEpisodeToPlaylist = (episodeId, playlistId) => {
   return (dispatch) => {
-    return PlaylistApiUtil.addEpisodeToPlaylist(episode, playlist).then(playlist => dispatch(receiveSinglePlaylist(playlist)))
+    return PlaylistApiUtil.addEpisodeToPlaylist(episodeId, playlistId).then(playlist => dispatch(receiveSinglePlaylist(playlist)))
   }
 }
 

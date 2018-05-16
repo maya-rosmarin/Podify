@@ -2,6 +2,7 @@ import React from 'react';
 import EpisodeContainer from '../episode/episode_container';
 import FaTrashCan from 'react-icons/lib/fa/trash';
 import FaPlus from 'react-icons/lib/fa/plus';
+import Modal from '../modal/modal';
 
 class MyPodcasts extends React.Component {
   constructor (props) {
@@ -20,20 +21,30 @@ class MyPodcasts extends React.Component {
       }
   }
 
+  handleSubmit (episodeId) {
+    return (e) => {
+      e.preventDefault();
+      this.props.openModal(<Modal episodeId={episodeId} component={<PlaylistDropdown />}/>);
+    }
+  }
+
   render () {
     let episodes;
     if (this.props.my_episodes) {
       episodes = this.props.my_episodes.map((episode) => {
         return <li className="my-podcast-index-item episode-index-item"><EpisodeContainer episode={episode} collectionName={this.props.collectionName} />
-        <form><button><FaPlus className="trashcan" /></button></form>
+        <form onSubmit={this.handleSubmit(episode.id)}><button><FaPlus className="trashcan" /></button></form>
         <form onSubmit={this.handleDelete(episode.id)}><button><FaTrashCan className="trashcan"/></button></form>
     </li>
       })
     } else {
       episodes = "";
     }
+    const Modal = this.props.modal ? this.props.modal : <span></span>
+
     return (
       <div>
+        {Modal}
         <h1 className="show-page-title">Your Podcasts</h1>
         <br />
         <br />
@@ -43,6 +54,5 @@ class MyPodcasts extends React.Component {
     )
   }
 }
-// <button className="green-button" id="narrow-button">PLAY</button>
 
 export default MyPodcasts;

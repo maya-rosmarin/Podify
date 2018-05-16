@@ -3,6 +3,7 @@ import * as EpisodeApiUtil from '../util/episode_api_util';
 export const SAVE_PODCAST_EPISODE = 'SAVE_PODCAST_EPISODE';
 export const RECEIVE_ALL_USER_EPISODES = 'RECEIVE_ALL_USER_EPISODES';
 export const DELETE_PODCAST_EPISODE = 'DELETE_PODCAST_EPISODE';
+export const ADD_EPISODE_TO_STATE = 'ADD_EPISODE_TO_STATE';
 
 export const saveSinglePodcastEpisode = (episode) => {
   return (dispatch) => {
@@ -41,6 +42,13 @@ export const receiveAllUserEpisodes = episodes => {
 export const deletePodcastEpisode = episodeId => {
   return {
     type: DELETE_PODCAST_EPISODE,
+    episodeId
+  }
+}
+
+export const addEpisodeToState = episodeId => {
+  return {
+    type: ADD_EPISODE_TO_STATE,
     episodeId
   }
 }

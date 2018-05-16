@@ -19,3 +19,11 @@ export const deleteUserEpisode = (episodeId) => {
     url: `api/episodes/${episodeId}`
   })
 }
+
+export const addEpisodeToState = (id) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/episodes',
+    data: { episode: { id } }
+  })
+}

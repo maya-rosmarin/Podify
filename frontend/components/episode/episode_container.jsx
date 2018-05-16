@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setCurrentEpisode, playCurrentEpisode, pauseCurrentEpisode } from '../../actions/audio_actions'
+import { setCurrentEpisode, playCurrentEpisode, pauseCurrentEpisode } from '../../actions/audio_actions';
 import Episode from './episode';
 
 const mapStateToProps = (state, ownProps) => {
