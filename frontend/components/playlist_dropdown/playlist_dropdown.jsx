@@ -10,6 +10,10 @@ class NewPlaylistForm extends React.Component {
     }
   }
 
+  componentDidMount () {
+    this.props.fetchAllUserPlaylists(this.props.currentUserId);
+  }
+
   update (field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -17,16 +21,19 @@ class NewPlaylistForm extends React.Component {
   }
 
   handleSubmit (e) {
-    e.preventDefault();
-    this.props.createNewPlaylist(this.state.title).then(({playlist}) => this.props.history.push(`/my_playlists/${playlist.id}`)).then(this.props.closeModal())
+    this.props.history.push(`/my_playlists/${playlist.id}`).then(this.props.closeModal())
   }
 
   render () {
+    let playlists;
+    if (this.props.my_playlists) {
+      playlists = this.props.my_playlists.map((playlist) => <li>{playlist.title}</li>)
+    }
     return (
     <div>
       <form onSubmit={this.handleSubmit}>
-        <input className="playlist-input" type="text" placeholder="New Playlist" value={this.state.title} onChange={this.update('title')}/>
-        <button className="green-button" id="create-playlist-button">CREATE</button>
+        <ul className="episode-index">{playlists}</ul>
+        <button className="green-button" id="create-playlist-button">ADD TO PLAYLIST</button>
       </form>
     </div>
     )

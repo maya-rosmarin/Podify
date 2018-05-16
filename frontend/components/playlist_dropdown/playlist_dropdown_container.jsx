@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAllUserEpisodes, deleteSinglePodcastEpisode, addEpisodeToState } from '../../actions/episode_actions';
 import { openModal } from '../../actions/modal_actions';
-import MyPodcasts from './my_podcasts';
+import PlaylistDropdown from './playlist_dropdown';
+import { fetchAllUserPlaylists } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -19,8 +19,9 @@ const mapDispatchToProps = (dispatch) => {
     deleteSinglePodcastEpisode: (episodeId) => {
       return dispatch(deleteSinglePodcastEpisode(episodeId))},
     addEpisodeToState: (episodeId) => dispatch(addEpisodeToState(episodeId)),
-    openModal: (modal) => { return dispatch(openModal(modal)) }
+    openModal: (modal) => { return dispatch(openModal(modal)) },
+    fetchAllUserPlaylists: (userId) => dispatch(fetchAllUserPlaylists(userId))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyPodcasts);
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistDropdown);

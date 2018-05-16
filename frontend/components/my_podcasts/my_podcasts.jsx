@@ -1,6 +1,7 @@
 import React from 'react';
 import EpisodeContainer from '../episode/episode_container';
 import FaTrashCan from 'react-icons/lib/fa/trash';
+import PlaylistDropdownContainer from '../playlist_dropdown/playlist_dropdown_container';
 import FaPlus from 'react-icons/lib/fa/plus';
 import Modal from '../modal/modal';
 
@@ -24,7 +25,7 @@ class MyPodcasts extends React.Component {
   handleSubmit (episodeId) {
     return (e) => {
       e.preventDefault();
-      this.props.openModal(<Modal episodeId={episodeId} component={<PlaylistDropdown />}/>);
+      this.props.openModal(<Modal episodeId={episodeId} component={<PlaylistDropdownContainer />}/>);
     }
   }
 
