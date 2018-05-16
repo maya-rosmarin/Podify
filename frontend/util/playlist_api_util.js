@@ -1,16 +1,16 @@
-export const fetchAllUserPlaylists = (user) => {
+export const fetchAllUserPlaylists = (userId) => {
   return $.ajax({
     method: 'GET',
     url: 'api/playlists',
-    data: { user }
+    data: { userId }
   })
 }
 
-export const createNewPlaylist = (playlist) => {
+export const createNewPlaylist = (playlistTitle) => {
   return $.ajax({
     method: 'POST',
     url: 'api/playlists',
-    data: { playlist }
+    data: { playlist: { title: playlistTitle } }
   })
 }
 

@@ -32,7 +32,6 @@ class Episode extends React.Component {
     if (this.props.episode.collection_name) {
       collection_name = ` - ${this.props.episode.collection_name}`
     }
-    debugger
     return (
       <div className="episode-index-item">
         <div className="musical-note-button">

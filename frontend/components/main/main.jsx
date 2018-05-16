@@ -6,6 +6,7 @@ import AudioContainer from '../audio/audio_container';
 import PodcastShowPageContainer from '../podcast/podcast_show_page_container';
 import MyPodcastsContainer from '../my_podcasts/my_podcasts_container';
 import MyPlaylistsContainer from '../my_playlists/my_playlists_container';
+import PlaylistShowContainer from '../playlist_show/playlist_show_container';
 import Home from '../home/home';
 
 const Main = (props) => {
@@ -17,6 +18,7 @@ const Main = (props) => {
       <Route exact path="/search" component={SearchFormContainer} />
       <Route path="/my_podcasts" component={MyPodcastsContainer} />
       <Route exact path="/my_playlists" component={MyPlaylistsContainer} />
+      <Route path="/my_playlists/:playlistId" component={PlaylistShowContainer} />
       <Route path="/home" component={Home} />
     </div>
   );

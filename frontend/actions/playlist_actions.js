@@ -4,15 +4,15 @@ export const RECEIVE_ALL_USER_PLAYLISTS = 'RECEIVE_ALL_USER_PLAYLISTS';
 export const RECEIVE_SINGLE_PLAYLIST = 'RECEIVE_SINGLE_PLAYLIST';
 export const DELETE_PLAYLIST = 'DELETE_PLAYLIST';
 
-export const fetchAllUserPlaylists = (user) => {
+export const fetchAllUserPlaylists = (userId) => {
   return (dispatch) => {
-    return PlaylistApiUtil.fetchAllUserPlaylists(user).then((playlists) => dispatch(receiveAllUserPlaylists(playlists)))
+    return PlaylistApiUtil.fetchAllUserPlaylists(userId).then((playlists) => dispatch(receiveAllUserPlaylists(playlists)))
   }
 }
 
-export const createNewPlaylist = (playlist) => {
+export const createNewPlaylist = (playlistTitle) => {
   return (dispatch) => {
-    return PlaylistApiUtil.createNewPlaylist(playlist).then(playlist => dispatch(receiveSinglePlaylist(playlist)))
+    return PlaylistApiUtil.createNewPlaylist(playlistTitle).then(playlist => dispatch(receiveSinglePlaylist(playlist)))
   }
 }
 

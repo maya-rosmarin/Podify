@@ -1,6 +1,8 @@
 import React from 'react';
 import FaPlay from 'react-icons/lib/fa/play';
 import FaPause from 'react-icons/lib/fa/pause';
+import FaBack from 'react-icons/lib/fa/step-backward';
+import FaForward from 'react-icons/lib/fa/step-forward';
 import FaRight from 'react-icons/lib/fa/caret-right'
 import FaLeft from 'react-icons/lib/fa/caret-left'
 
@@ -59,13 +61,13 @@ class Audio extends React.Component {
         <center>
           {audio}
           <button>
-            <div className="audio-player-skip skip-left">|<FaLeft className="skip-back" /></div>
+            <div className="audio-player-skip skip-left"><FaBack className="skip-back" /></div>
           </button>
           <button onClick={this.handleClick}>
             <div className="audio-player-play-pause"><div className="padding">{padding}</div>   {play_pause}</div>
           </button>
           <button>
-            <div className="audio-player-skip skip-right"><FaRight className="skip" />|</div>
+            <div className="audio-player-skip skip-right"><FaForward className="skip" /></div>
           </button>
         </center>
         <right>

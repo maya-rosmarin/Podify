@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import NewPlaylistForm from '../my_playlists/new_playlist_form';
+import NewPlaylistFormContainer from '../my_playlists/new_playlist_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -10,7 +10,7 @@ function Modal({ modal, closeModal }) {
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
-        <NewPlaylistForm />
+        <NewPlaylistFormContainer />
       </div>
     </div>
   );

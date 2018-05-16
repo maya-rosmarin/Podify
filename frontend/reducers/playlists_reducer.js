@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     case RECEIVE_ALL_USER_PLAYLISTS:
       return merge({}, state, action.playlists)
     case RECEIVE_SINGLE_PLAYLIST:
-      return merge({}, state, action.playlist)
+      return merge({}, state, {[action.playlist.id]: action.playlist} )
     case DELETE_PLAYLIST:
       const newState = merge({}, state)
       delete newState[action.playlist]
