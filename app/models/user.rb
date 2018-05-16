@@ -27,6 +27,8 @@ class User < ApplicationRecord
     through: :user_episodes,
     source: :episode
 
+  has_many :playlists
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end

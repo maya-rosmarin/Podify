@@ -1,7 +1,9 @@
 .main-container {
   display: flex;
   flex-direction: row;
-  background: #525952;
+  // background: #525952;
+  // background: linear-gradient(to bottom right, #3f4c3f, #3b3d3b);
+  background-color: #5f6d5f;
 }
 
 .home-page {
@@ -29,6 +31,12 @@ tiles {
   height: 250px;
   width: auto;
   margin: 30px;
+  box-shadow: 5px 5px 5px #333833;
+  -webkit-filter: brightness(100%);
+}
+
+.tile:hover {
+  -webkit-filter: brightness(70%);
 }
 
 .rec-text {
@@ -36,4 +44,8 @@ tiles {
   font-size: 20px;
   font-weight: 800;
   text-align: center;
+}
+
+.show-image {
+  box-shadow: 5px 5px 5px #333833;
 }

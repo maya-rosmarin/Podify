@@ -36,27 +36,33 @@ class Audio extends React.Component {
 
   render () {
     this.playTag();
-    let audio;
+    let audio, title, padding;
     let play_pause;
     if (this.props.currentEpisode) {
       audio = <audio onCanPlayThrough={() => {this.playTag();}} src={this.props.currentEpisode.audio} ref={(audio) => this.audio = audio} ></audio>
+      title = this.props.currentEpisode.title
     } else {
       audio = "";
     };
     if (this.props.currentEpisodePlaying) {
       play_pause = <FaPause />
+      padding = "";
     } else {
       play_pause = <FaPlay />
+      padding = "i";
     }
     return (
       <div className="audio-player">
+        <div className="currently-playing">
+          {title}
+        </div>
         <center>
           {audio}
           <button>
             <div className="audio-player-skip skip-left">|<FaLeft className="skip-back" /></div>
           </button>
           <button onClick={this.handleClick}>
-            <div className="audio-player-play-pause">{play_pause}</div>
+            <div className="audio-player-play-pause"><div className="padding">{padding}</div>   {play_pause}</div>
           </button>
           <button>
             <div className="audio-player-skip skip-right"><FaRight className="skip" />|</div>

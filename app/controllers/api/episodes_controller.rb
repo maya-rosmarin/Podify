@@ -2,7 +2,6 @@ class Api::EpisodesController < ApplicationController
 
   def index
     @episodes = current_user.episodes
-    # debugger
     render :index
   end
 

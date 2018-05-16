@@ -1,0 +1,26 @@
+.playlist-button {
+  background-color: #1db954;
+  border-radius: 500px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  padding: 16px 48px 18px;
+  margin-bottom: 14px;
+  transition-property: background-color,border-color,color,box-shadow,filter,-webkit-box-shadow,-webkit-filter;
+  letter-spacing: 2px;
+  width: 250px;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: Muli, Helvetica,Arial,sans-serif;
+  display: inline-block;
+  outline: none;
+  margin: 40px;
+}
+
+.playlist-button:hover {
+  background-color: #1ed760;
+}
