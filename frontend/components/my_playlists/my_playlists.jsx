@@ -6,10 +6,16 @@ import { Link } from 'react-router-dom';
 class MyPlaylists extends React.Component {
   constructor (props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {
     this.props.fetchAllUserPlaylists(this.props.currentUserId);
+  }
+
+  handleSubmit (e) {
+    e.preventDefault();
+    this.props.openModal(<Modal component={<NewPlaylistFormContainer />} />)
   }
 
   render () {
@@ -24,9 +30,9 @@ class MyPlaylists extends React.Component {
     return (
       <div>
         <h1 className="show-page-title">Your Playlists</h1>
-        <Modal />
-        <form>
-          <button className="playlist-button" onClick={() => this.props.openModal(<Modal component={<NewPlaylistFormContainer />}/>)}>NEW PLAYLIST</button>
+        {this.props.modal}
+        <form onSubmit={this.handleSubmit}>
+          <button className="playlist-button">NEW PLAYLIST</button>
         </form>
         <ul>{playlists}</ul>
       </div>

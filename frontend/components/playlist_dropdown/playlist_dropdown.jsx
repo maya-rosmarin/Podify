@@ -1,27 +1,18 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class NewPlaylistForm extends React.Component {
   constructor (props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {
-      title: ''
-    }
   }
 
   componentDidMount () {
     this.props.fetchAllUserPlaylists(this.props.currentUserId);
   }
 
-  update (field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
   handleSubmit (e) {
-    this.props.history.push(`/my_playlists/${playlist.id}`).then(this.props.closeModal())
+    e.preventDefault();
+    this.props.closeModal()
   }
 
   render () {
@@ -40,4 +31,4 @@ class NewPlaylistForm extends React.Component {
   }
 }
 
-export default withRouter(NewPlaylistForm);
+export default NewPlaylistForm;

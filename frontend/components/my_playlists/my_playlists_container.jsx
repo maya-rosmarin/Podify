@@ -8,7 +8,8 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
   return {
     my_playlists: Object.values(state.entities.playlists),
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    modal: state.modal,
   }
 }
 

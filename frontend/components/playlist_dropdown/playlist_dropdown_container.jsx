@@ -18,7 +18,6 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllUserEpisodes: () => { return dispatch(fetchAllUserEpisodes()) },
     deleteSinglePodcastEpisode: (episodeId) => {
       return dispatch(deleteSinglePodcastEpisode(episodeId))},
-    addEpisodeToState: (episodeId) => dispatch(addEpisodeToState(episodeId)),
     openModal: (modal) => { return dispatch(openModal(modal)) },
     fetchAllUserPlaylists: (userId) => dispatch(fetchAllUserPlaylists(userId))
   }
