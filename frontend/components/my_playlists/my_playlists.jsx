@@ -19,7 +19,7 @@ class MyPlaylists extends React.Component {
   }
 
   render () {
-    debugger
+    
     let playlists;
     if (this.props.my_playlists) {
       playlists = this.props.my_playlists.map(playlist => <li><Link to={'/my_playlists/' + playlist.id}

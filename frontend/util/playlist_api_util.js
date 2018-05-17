@@ -27,3 +27,18 @@ export const deletePlaylist = (playlistId) => {
     url: `api/playlists/${playlistId}`
   })
 }
+
+export const addEpisodeToPlaylist = (episodeId, playlistId) => {
+  return $.ajax({
+    method: 'POST',
+    url: `api/playlists/${playlistId}/add_episode`,
+    data: { episodeId }
+  })
+}
+
+export const fetchAllPlaylistEpisodes = (playlistId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/playlist_episodes/${playlistId}`
+  })
+}

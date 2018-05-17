@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get('podcasts/get_episodes', { to: 'podcasts#get_episodes' })
     resources :playlists, only: [:index, :create, :show, :update, :destroy]
     resources :episodes, only: [:index, :create, :destroy]
-    post('playlists/:id/add_episode', { to: 'playlists#add_episode' })
+    resources :playlist_episodes, only: [:index, :show]
+    post('/playlists/:id/add_episode', { to: 'playlists#add_episode' })
   end
 
 end

@@ -25,7 +25,7 @@ class MyPodcasts extends React.Component {
   handleSubmit (episodeId) {
     return (e) => {
       e.preventDefault();
-      this.props.openModal(<Modal episodeId={episodeId} component={<PlaylistDropdownContainer />}/>);
+      this.props.openModal(<Modal episodeId={episodeId} component={<PlaylistDropdownContainer episodeId={episodeId} />}/>);
     }
   }
 

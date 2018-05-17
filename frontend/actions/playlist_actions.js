@@ -3,6 +3,7 @@ import * as PlaylistApiUtil from '../util/playlist_api_util';
 export const RECEIVE_ALL_USER_PLAYLISTS = 'RECEIVE_ALL_USER_PLAYLISTS';
 export const RECEIVE_SINGLE_PLAYLIST = 'RECEIVE_SINGLE_PLAYLIST';
 export const DELETE_PLAYLIST = 'DELETE_PLAYLIST';
+export const RECEIVE_ALL_PLAYLIST_EPISODES = 'RECEIVE_ALL_PLAYLIST_EPISODES';
 
 export const fetchAllUserPlaylists = (userId) => {
   return (dispatch) => {
@@ -25,6 +26,19 @@ export const addEpisodeToPlaylist = (episodeId, playlistId) => {
 export const deletePlaylist = (playlistId) => {
   return (dispatch) => {
     return PlaylistApiUtil.deletePlaylist(playlistId).then(() => dispatch(deletePlaylistById(playlistId)))
+  }
+}
+
+export const receiveAllPlaylistEpisodes = (playlistId) => {
+  return (dispatch) => {
+    return PlaylistApiUtil.fetchAllPlaylistEpisodes(playlistId).then((episodes) => dispatch(receivePlaylistEpisodes(episodes)))
+  }
+}
+
+export const receivePlaylistEpisodes = episodes => {
+  return {
+    type: RECEIVE_ALL_PLAYLIST_EPISODES,
+    episodes
   }
 }
 

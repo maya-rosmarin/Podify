@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllUserPlaylists: (currentUserId) => { return dispatch(fetchAllUserPlaylists(currentUserId)) },
     createNewPlaylist: (playlistTitle) => { return dispatch(createNewPlaylist(playlistTitle)) },
-    addEpisodeToPlaylist: (episode, playlist) => { return dispatch(addEpisodeToPlaylist(episode, playlist)) },
+    addEpisodeToPlaylist: (episodeId, playlistId) => { return dispatch(addEpisodeToPlaylist(episodeId, playlistId)) },
     deletePlaylist: (playlistId) => { return dispatch(deletePlaylist(playlistId)) },
     openModal: (modal) => { return dispatch(openModal(modal)) }
   }

@@ -30,9 +30,10 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def add_episode
+    
     @playlist = Playlist.find(params[:id])
-    playlist_episode = PlaylistEpisode.create({ playlist_id: params[:id], episode_id: params[:episode_id] })
-    render json: { playlist_id: playlist_episode.playlist_id, episode_id: playlist_episode.episode_id }
+    playlist_episode = PlaylistEpisode.create({ playlist_id: params[:id], episode_id: params[:episodeId] })
+    render json: { playlist_id: params[:playlist_id], episode_id: params[:episodeId] }
   end
 
   def destroy

@@ -11,7 +11,7 @@
 
 class PlaylistEpisode < ApplicationRecord
 
-  validates :playlist_id, :podcast_id, presence: true
+  validates :playlist_id, :episode_id, presence: true
 
   belongs_to :playlist,
     class_name: :Playlist,

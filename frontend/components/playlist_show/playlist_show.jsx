@@ -1,4 +1,5 @@
 import React from 'react';
+import EpisodeContainer from '../episode/episode_container';
 
 class PlaylistShow extends React.Component {
   constructor (props) {
@@ -7,8 +8,8 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount () {
-    debugger
-    this.props.fetchAllUserPlaylists(this.props.currentUserId)
+    this.props.fetchAllUserPlaylists(this.props.currentUserId);
+    this.props.receiveAllPlaylistEpisodes(this.props.playlistId);
   }
 
   handleDelete (playlistId) {
@@ -19,16 +20,19 @@ class PlaylistShow extends React.Component {
   }
 
   render () {
-    let currentPlaylistTitle;
+    let currentPlaylistTitle, playlistEpisodes;
     if (this.props.currentPlaylist) {
-      debugger
       currentPlaylistTitle = this.props.currentPlaylist.title
     } else {
       currentPlaylistTitle = "";
     }
+    if (this.props.playlistEpisodes) {
+      playlistEpisodes = this.props.playlistEpisodes.map((episode) => <li><EpisodeContainer episode={episode} /></li>)
+    }
     return (
       <div>
         <h1 className="show-page-title">{currentPlaylistTitle}</h1>
+        <ul className="show-page-title" id="playlist-show-index-item">{playlistEpisodes}</ul>
         <button className="playlist-button" onClick={this.handleDelete(this.props.playlistId)}>DELETE PLAYLIST</button>
       </div>
     )
