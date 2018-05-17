@@ -9,7 +9,7 @@ export default (state = {}, action) => {
       return merge({}, state, {[action.playlist.id]: action.playlist} )
     case DELETE_PLAYLIST:
       const newState = merge({}, state)
-      delete newState[action.playlist]
+      delete newState[action.playlistId]
       return newState;
     default:
       return state;
