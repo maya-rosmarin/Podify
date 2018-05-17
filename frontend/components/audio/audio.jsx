@@ -41,9 +41,12 @@ class Audio extends React.Component {
     this.playTag();
     let audio, title, padding;
     let play_pause;
-    if (this.props.currentEpisode) {
-      audio = <audio onCanPlayThrough={() => {this.playTag();}} src={this.props.currentEpisode.audio} ref={(audio) => this.audio = audio} controls ></audio>
-      title = this.props.currentEpisode.title
+    if (this.props.currentEpisodeLocal) {
+      audio = <audio onCanPlayThrough={() => {this.playTag();}} src={this.props.currentEpisodeLocal.audio} ref={(audio) => this.audio = audio} ></audio>
+      title = this.props.currentEpisodeLocal.title
+    } else if (this.props.currentEpisodeRemote) {
+      audio = <audio onCanPlayThrough={() => {this.playTag();}} src={this.props.currentEpisodeRemote.audio} ref={(audio) => this.audio = audio} ></audio>
+      title = this.props.currentEpisodeRemote.title
     } else {
       audio = "";
     };

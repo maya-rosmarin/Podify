@@ -3,9 +3,15 @@ import { setCurrentEpisode, playCurrentEpisode, pauseCurrentEpisode } from '../.
 import Audio from './audio';
 
 const mapStateToProps = state => {
+  let currentEpisodeRemote;
+  if (state.entities.remotePodcasts.episodes) {
+    currentEpisodeRemote = state.entities.remotePodcasts.episodes.filter(episode => episode.id === state.audio.currentEpisodeId)[0];
+  };
+  debugger
   return {
     currentEpisodeId: state.audio.currentEpisodeId,
-    currentEpisode: state.entities.localPodcasts[state.audio.currentEpisodeId],
+    currentEpisodeLocal: state.entities.localPodcasts[state.audio.currentEpisodeId],
+    currentEpisodeRemote: currentEpisodeRemote,
     currentEpisodePlaying: state.audio.currentEpisodePlaying
   }
 };
