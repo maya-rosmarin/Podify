@@ -19,14 +19,8 @@ class MyPlaylists extends React.Component {
   }
 
   render () {
-    
-    let playlists;
-    if (this.props.my_playlists) {
-      playlists = this.props.my_playlists.map(playlist => <li><Link to={'/my_playlists/' + playlist.id}
+      const playlists = this.props.my_playlists.map(playlist => <li><Link to={'/my_playlists/' + playlist.id}
        className="playlist-index-item">{playlist.title}</Link></li>)
-    } else {
-      playlists = "";
-    }
     return (
       <div>
         <h1 className="show-page-title">Your Playlists</h1>

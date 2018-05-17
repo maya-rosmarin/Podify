@@ -8,8 +8,7 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchAllUserPlaylists(this.props.currentUserId);
-    this.props.receiveAllPlaylistEpisodes(this.props.playlistId);
+    this.props.fetchPlaylist(this.props.match.params.playlistId);
   }
 
   handleDelete (playlistId) {
@@ -20,18 +19,22 @@ class PlaylistShow extends React.Component {
   }
 
   render () {
+    debugger
     let currentPlaylistTitle, playlistEpisodes;
+    let playlistLength = 0;
     if (this.props.currentPlaylist) {
       currentPlaylistTitle = this.props.currentPlaylist.title
     } else {
       currentPlaylistTitle = "";
     }
     if (this.props.playlistEpisodes) {
-      playlistEpisodes = this.props.playlistEpisodes.map((episode) => <li><EpisodeContainer episode={episode} /></li>)
+      playlistEpisodes = this.props.playlistEpisodes.map((episode, idx) => <li className="episode-item">{idx+1}.<EpisodeContainer episode={episode} /></li>)
+      playlistLength = playlistEpisodes.length
     }
     return (
       <div>
         <h1 className="show-page-title">{currentPlaylistTitle}</h1>
+        <h5 id="num-podcasts">{playlistLength} podcasts</h5>
         <ul className="show-page-title" id="playlist-show-index-item">{playlistEpisodes}</ul>
         <button className="playlist-button" onClick={this.handleDelete(this.props.playlistId)}>DELETE PLAYLIST</button>
       </div>

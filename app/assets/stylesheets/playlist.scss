@@ -38,4 +38,17 @@
   font-size: 18px;
   font-weight: 400;
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#num-podcasts {
+  color: #a1a4a8;
+  padding-right: 15px;
+}
+
+.episode-item {
+  display: flex;
+  flex-direction: row;
+  margin-right: 50px;
 }

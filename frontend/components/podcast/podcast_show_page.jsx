@@ -34,38 +34,42 @@ class PodcastShowPage extends React.Component {
   }
 
   render () {
-      let podcast, episodes, title;
-      if (this.props.currentPodcast) {
-        podcast = <div><img className="show-image" src={this.props.currentPodcast.artworkUrl600} /></div>
-          title = this.props.match.params.collectionName;
-          localStorage.setItem("collectionName", title);
-          if (this.props.currentPodcastEpisodes) {
-            episodes = this.props.currentPodcastEpisodes.map((episode) => {
-
-            return (
-              <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
-                <EpisodeContainer episode={episode} collectionName={this.props.collectionName} image={this.props.currentPodcast.artworkUrl600}/>
-                <button className="save-button"><FaDownload /></button>
-            </form>
-            )
-          }
-        )
-      }
-    } else {
-      title = this.props.match.params.collectionName;
-      }
-      return (
-        <div className="podcast-episode-index">
-          <div>
-            <h1 className="show-page-title">{title}</h1>
-            <br />
-            <br />
-            <br />
-            <div className="podcast-show-art">{podcast}</div>
-          </div>
-          <div className="episode-index">{episodes}</div>
+    let podcast, episodes;
+    const title = this.props.match.params.collectionName;
+    if (this.props.currentPodcast) {
+      podcast = (
+        <div>
+          <img className="show-image" src={this.props.currentPodcast.artworkUrl600} />
         </div>
-      )
+      );
+
+      localStorage.setItem("collectionName", title);
+
+      if (this.props.currentPodcastEpisodes) {
+        episodes = this.props.currentPodcastEpisodes.map((episode) => {
+          debugger
+          return (
+            <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
+              <EpisodeContainer episode={episode} collectionName={this.props.collectionName} image={this.props.currentPodcast.artworkUrl600}/>
+              <button className="save-button"><FaDownload /></button>
+            </form>
+          );
+        });
+      }
     }
+
+    return (
+      <div className="podcast-episode-index">
+        <div>
+          <h1 className="show-page-title">{title}</h1>
+          <br />
+          <br />
+          <br />
+          <div className="podcast-show-art">{podcast}</div>
+        </div>
+        <div className="episode-index">{episodes}</div>
+      </div>
+    )
+  }
 };
 export default PodcastShowPage;

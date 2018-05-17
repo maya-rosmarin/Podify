@@ -17,9 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestAllPodcasts: (searchQuery) => {
-      return dispatch(requestAllPodcasts(searchQuery))
-    },
     requestSinglePodcast: (searchQuery) => {
       return dispatch(requestSinglePodcast(searchQuery))
     },
