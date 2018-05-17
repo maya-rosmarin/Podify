@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistShow from './playlist_show';
-import { fetchAllUserPlaylists } from '../../actions/playlist_actions';
+import { fetchAllUserPlaylists, deletePlaylist } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   debugger
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    deletePlaylistById: (playlistId) => dispatch(deletePlaylistById(playlistId)),
+    deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
     fetchAllUserPlaylists: (userId) => dispatch(fetchAllUserPlaylists(userId))
   }
 }

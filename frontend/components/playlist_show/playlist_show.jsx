@@ -14,7 +14,7 @@ class PlaylistShow extends React.Component {
   handleDelete (playlistId) {
     return (e) => {
       e.preventDefault();
-      this.props.deletePlaylistById(playlistId)
+      this.props.deletePlaylist(playlistId).then(() => this.props.history.push("/my_playlists")).then(this.props.closeModal())
     }
   }
 
@@ -29,7 +29,7 @@ class PlaylistShow extends React.Component {
     return (
       <div>
         <h1 className="show-page-title">{currentPlaylistTitle}</h1>
-        <button className="playlist-button" onClick={this.handleDelete} >DELETE PLAYLIST</button>
+        <button className="playlist-button" onClick={this.handleDelete(this.props.playlistId)}>DELETE PLAYLIST</button>
       </div>
     )
   }
