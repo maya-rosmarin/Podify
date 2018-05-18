@@ -34,6 +34,20 @@ center {
   margin-top: 2px;
 }
 
+.audio-player-play {
+  border-radius: 50%;
+  border: 1px solid hsla(0,0%,100%,.6);
+  padding: 10px;
+  color: #afafaf;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+  cursor: auto;
+}
+
 .audio-player-play-pause:hover {
   color: white;
   padding: 11px;
@@ -58,11 +72,7 @@ center {
   height: 80%;
 }
 
-.skip:hover {
-  color: white;
-}
-
-.skip-back:hover {
+.audio-player-skip:hover {
   color: white;
 }
 
@@ -111,4 +121,36 @@ center {
 
 .padding {
   color: #282828;
+}
+
+.play-button {
+  cursor: auto;
+}
+
+.disabled-skip-forward {
+  padding: 7px;
+  color: #afafaf;
+  font-size: 16px;
+  cursor: auto;
+}
+
+.disabled-skip-backward {
+  padding: 7px;
+  color: #afafaf;
+  font-size: 16px;
+  cursor: auto;
+}
+
+disabled-skip-backward:hover {
+  padding: 7px;
+  color: #afafaf;
+  font-size: 16px;
+  cursor: auto;
+}
+
+.disabled-skip-forward:hover {
+  padding: 7px;
+  color: #afafaf;
+  font-size: 16px;
+  cursor: auto;
 }
