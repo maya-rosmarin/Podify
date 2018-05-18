@@ -3,6 +3,7 @@ import * as SearchApiUtil from '../util/search_api_util';
 export const RECEIVE_ALL_PODCASTS = 'RECEIVE_ALL_PODCASTS';
 export const RECEIVE_PODCAST = 'RECEIVE_PODCAST';
 export const RECEIVE_PODCAST_EPISODES = 'RECEIVE_PODCAST_EPISODES';
+export const CLEAR_PODCAST_STATE = 'CLEAR_PODCAST_STATE';
 
 export const requestAllPodcasts = (searchQuery) => {
   return (dispatch) => {
@@ -53,5 +54,12 @@ export const receivePodcastEpisodes = (episodes) => {
   return {
     type: RECEIVE_PODCAST_EPISODES,
     episodes
+  }
+}
+
+
+export const clearPodcastState = () => {
+  return {
+    type: CLEAR_PODCAST_STATE
   }
 }

@@ -9,17 +9,13 @@ class PodcastShowPage extends React.Component {
   }
 
   componentDidMount () {
-    if (!this.props.currentPodcast) {
-      this.props.requestSinglePodcast(this.props.match.params.collectionName)
-    } else {
-      this.props.requestPodcastEpisodes(this.props.currentPodcast.feedUrl)
-    }
+    this.props.requestSinglePodcast(this.props.match.params.collectionName)
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.props.match.params.collectionName !== nextProps.match.params.collectionName) {
-      this.props.requestSinglePodcast(nextProps.match.params.collectionName)
-    };
+    // if (this.props.match.params.collectionName !== nextProps.match.params.collectionName) {
+    //   this.props.requestSinglePodcast(nextProps.match.params.collectionName)
+    // };
     if (!this.props.currentPodcast && nextProps.currentPodcast) {
       this.props.requestPodcastEpisodes(nextProps.currentPodcast.feedUrl)
     }

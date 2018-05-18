@@ -6,6 +6,11 @@ class SearchIndex extends React.Component {
     super(props);
   }
 
+  componentWillUnmount () {
+    debugger
+    this.props.clearPodcastState();
+  }
+
   render () {
     let searchResults;
     if (this.props.podcasts.length === 0) {

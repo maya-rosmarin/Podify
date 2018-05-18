@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SearchIndex from './search_index';
-import { requestAllPodcasts } from '../../actions/search_actions';
+import { requestAllPodcasts, clearPodcastState, requestSinglePodcast } from '../../actions/search_actions';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
+  debugger
   let currentUserId = state.session.id;
   return {
     currentUser: state.entities.users[currentUserId],
@@ -17,6 +18,8 @@ const mapDispatchToProps = dispatch => {
     requestAllPodcasts: (searchQuery) => {
       return dispatch(requestAllPodcasts(searchQuery))
     },
+    clearPodcastState: () => dispatch(clearPodcastState()),
+    requestSinglePodcast: (searchQuery) => dispatch(requestSinglePodcast(searchQuery)),
     logout: () => { return dispatch(logout()); }
   };
 };
