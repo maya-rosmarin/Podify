@@ -5,6 +5,7 @@ import FaCheckMark from 'react-icons/lib/fa/check';
 import FaUser from 'react-icons/lib/fa/user';
 import FaGit from 'react-icons/lib/fa/github';
 import FaLI from 'react-icons/lib/fa/linkedin';
+import FaAngellist from 'react-icons/lib/fa/angellist';
 import { AuthRoute } from '../../util/route_util';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
@@ -19,9 +20,10 @@ export default (props) => {
     return (
       <div className="splash-background">
         <div className="splash-sign-in-div">
-          <div>
-          <div><a href="https://github.com/maya-rosmarin"><FaGit /></a></div>
-          <div><a href="https://www.linkedin.com/in/maya-rosmarin-170794b5/"><FaLI /></a></div>
+          <div className="contact-info">
+          <div className="contact"><a href="https://github.com/maya-rosmarin"><FaGit /></a></div>
+          <div className="contact"><a href="https://www.linkedin.com/in/maya-rosmarin-170794b5/"><FaLI /></a></div>
+          <div className="contact"><a href="https://angel.co/maya-rosmarin"><FaAngellist /></a></div>
           </div>
           <h2 className="logo-header sign-up-logo-header" ><FaVolumeUp />  Podify</h2>
           <Link className="green-button splash-button" to='/signup' >SIGN UP</Link>
