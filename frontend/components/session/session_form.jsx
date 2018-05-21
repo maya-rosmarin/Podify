@@ -26,7 +26,8 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    let header, link, linkText, buttonText, linkPrompt, guestUser, guestLink;
+    debugger
+    let header, link, linkText, buttonText, linkPrompt, guestUser, guestLink, errors;
     if (this.props.formType === 'signup') {
       header = "Sign up with your email address",
       link = "/login",
@@ -42,12 +43,15 @@ class SessionForm extends React.Component {
       guestUser = "Sign in as "
       guestLink = "Guest User"
     };
+    if (this.props.errors) {
+      errors = this.props.errors.map(error => <li>{error}</li>)
+    }
 
     return (
       <div className="session-form">
         <h2 className="logo-header" ><FaVolumeUp />  Podify</h2>
         <h4 className="sign-up-header">{header}</h4>
-          <div>{this.props.errors}</div>
+          <ul className="errors">{errors}</ul>
           <form className="user-input" onSubmit={this.handleSubmit}>
             <input className="input-field" onChange={this.update("username")} type="text" value={this.state.username} placeholder="Email" />
             <br />
@@ -56,7 +60,7 @@ class SessionForm extends React.Component {
             <button className="green-button">{buttonText}</button>
             <br />
           </form>
-          <div>{linkPrompt}<Link className="linkText" to={link}>{linkText}</Link></div>
+          <div>{linkPrompt}<Link onClick={this.props.clearErrors} className="linkText" to={link}>{linkText}</Link></div>
           <br />
           <div>{guestUser} <button onClick={() => {this.props.processForm({username: 'Guest', password: 'password'})}} className="linkText guest">{guestLink}</button></div>
       </div>
