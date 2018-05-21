@@ -19,7 +19,7 @@ class PlaylistShow extends React.Component {
   }
 
   render () {
-    debugger
+    
     let currentPlaylistTitle, playlistEpisodes;
     let playlistLength = 0;
     if (this.props.currentPlaylist) {

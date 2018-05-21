@@ -4,7 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { fetchAllUserPlaylists, deletePlaylist, receiveAllPlaylistEpisodes, fetchPlaylist } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   let playlistEpisodeIds = [];
   if (state.entities.playlists[ownProps.match.params.playlistId] && state.entities.playlists[ownProps.match.params.playlistId].episodes) {
     playlistEpisodeIds = state.entities.playlists[ownProps.match.params.playlistId].episodes

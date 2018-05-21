@@ -5,7 +5,7 @@ import { requestAllPodcasts, clearPodcastState, requestSinglePodcast } from '../
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
-  debugger
+  
   let currentUserId = state.session.id;
   return {
     currentUser: state.entities.users[currentUserId],

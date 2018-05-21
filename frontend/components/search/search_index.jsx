@@ -7,7 +7,7 @@ class SearchIndex extends React.Component {
   }
 
   componentWillUnmount () {
-    debugger
+    
     this.props.clearPodcastState();
   }
 

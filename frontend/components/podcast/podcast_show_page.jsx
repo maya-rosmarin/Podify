@@ -43,7 +43,7 @@ class PodcastShowPage extends React.Component {
 
       if (this.props.currentPodcastEpisodes) {
         episodes = this.props.currentPodcastEpisodes.map((episode) => {
-          debugger
+          
           return (
             <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
               <EpisodeContainer episode={episode} collectionName={this.props.collectionName} image={this.props.currentPodcast.artworkUrl600}/>

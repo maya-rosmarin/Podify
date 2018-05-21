@@ -7,7 +7,7 @@ const mapStateToProps = state => {
   if (state.entities.remotePodcasts.episodes) {
     currentEpisodeRemote = state.entities.remotePodcasts.episodes.filter(episode => episode.id === state.audio.currentEpisodeId)[0];
   };
-  debugger
+  
   return {
     currentEpisodeId: state.audio.currentEpisodeId,
     currentEpisodeLocal: state.entities.localPodcasts[state.audio.currentEpisodeId],
