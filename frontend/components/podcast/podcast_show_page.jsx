@@ -6,6 +6,9 @@ class PodcastShowPage extends React.Component {
   constructor (props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      text: ""
+    }
   }
 
   componentDidMount () {
@@ -13,19 +16,21 @@ class PodcastShowPage extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    // if (this.props.match.params.collectionName !== nextProps.match.params.collectionName) {
-    //   this.props.requestSinglePodcast(nextProps.match.params.collectionName)
-    // };
+    if (this.props.match.params.collectionName !== nextProps.match.params.collectionName) {
+      this.props.requestSinglePodcast(nextProps.match.params.collectionName)
+    };
     if (!this.props.currentPodcast && nextProps.currentPodcast) {
       this.props.requestPodcastEpisodes(nextProps.currentPodcast.feedUrl)
     }
   }
 
   handleSubmit (episode) {
+    debugger
     return (e) => {
       e.preventDefault();
       episode.collection_name = localStorage.getItem('collectionName')
       this.props.saveSinglePodcastEpisode(episode)
+      this.setState({text: 'Successfully downloaded'})
     }
   }
 
@@ -43,11 +48,11 @@ class PodcastShowPage extends React.Component {
 
       if (this.props.currentPodcastEpisodes) {
         episodes = this.props.currentPodcastEpisodes.map((episode) => {
-          
+
           return (
             <form onSubmit={this.handleSubmit(episode)} className="episode-index-item">
               <EpisodeContainer episode={episode} collectionName={this.props.collectionName} image={this.props.currentPodcast.artworkUrl600}/>
-              <button className="save-button"><FaDownload /></button>
+              <button className="save-button"><FaDownload />{this.text}</button>
             </form>
           );
         });
@@ -62,6 +67,7 @@ class PodcastShowPage extends React.Component {
           <br />
           <br />
           <div className="podcast-show-art">{podcast}</div>
+          <div>{this.state.text}</div>
         </div>
         <div className="episode-index">{episodes}</div>
       </div>

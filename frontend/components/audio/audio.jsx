@@ -11,11 +11,19 @@ class Audio extends React.Component {
     super(props);
     this.play = this.play.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleVolume = this.handleVolume.bind(this);
+    this.state = {
+      volume: 0.5
+    }
   }
 
   handleClick (e) {
     e.preventDefault();
     this.play();
+  }
+
+  handleVolume (e) {
+    this.setState({ volume: e.target.value }, () => this.audio.volume = this.state.volume )
   }
 
   play () {
@@ -37,6 +45,7 @@ class Audio extends React.Component {
   }
 
   render () {
+    debugger
     this.playTag();
     let audio, title, padding, disabled, className, skipBackward, skipForward, play_pause;
     if (this.props.currentEpisodeLocal) {
@@ -84,14 +93,14 @@ class Audio extends React.Component {
             <div className={skipForward}><FaForward className="skip" /></div>
           </button>
         </center>
-        <right>
-          <div className="slidecontainer">
-            <input type="range" min="0" max="100" value="50" className="slider" id="myRange"></input>
-          </div>
+        <right className="slidecontainer">
+          <input className="slider" type="range" min="0" max="1" step="0.05" onChange={this.handleVolume} value={this.state.volume}></input>
         </right>
       </div>
     )
   }
 }
+
+
 
 export default Audio;

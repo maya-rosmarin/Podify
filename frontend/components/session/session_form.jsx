@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    debugger
     let header, link, linkText, buttonText, linkPrompt, guestUser, guestLink, errors;
     if (this.props.formType === 'signup') {
       header = "Sign up with your email address",
@@ -43,6 +42,7 @@ class SessionForm extends React.Component {
       guestUser = "Sign in as "
       guestLink = "Guest User"
     };
+    debugger
     if (this.props.errors) {
       errors = this.props.errors.map(error => <li>{error}</li>)
     }
