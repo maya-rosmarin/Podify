@@ -39,13 +39,13 @@ class PodcastShowPage extends React.Component {
     }
   }
 
-  // <img className="show-image" src={this.props.currentPodcast.artworkUrl600} />
   render () {
     let podcast, episodes;
     const title = this.props.match.params.collectionName;
     if (this.props.currentPodcast) {
       podcast = (
         <div>
+          <img className="show-image" src={this.props.currentPodcast.artworkUrl600} />
         </div>
       );
 
