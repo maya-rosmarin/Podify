@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentEpisodeId: state.audio.currentEpisodeId,
     currentEpisode: state.entities.localPodcasts[state.audio.currentEpisodeId],
-    currentEpisodePlaying: state.audio.currentEpisodePlaying,
+    isCurrentEpisodePlaying: state.audio.currentEpisodePlaying,
     image: ownProps.image
   }
 };

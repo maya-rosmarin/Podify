@@ -12,6 +12,7 @@
 class Playlist < ApplicationRecord
 
   validates :title, :user_id, presence: true
+  validates :title, length: { minimum: 1 }
 
   belongs_to :user,
     class_name: :User,

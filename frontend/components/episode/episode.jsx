@@ -8,18 +8,36 @@ class Episode extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // handleClick (e) {
+  //   e.preventDefault();
+  //   let previousEpisode = this.props.currentEpisode;
+  //   this.props.setCurrentEpisode(this.props.episode.id);
+  //   if (this.props.isCurrentEpisodePlaying && (previousEpisode !== this.props.currentEpisode)) {
+  //     this.props.playCurrentEpisode();
+  //     previousEpisode = null;
+  //   } else {
+  //     this.play();
+  //   }
+  // }
+
+
   handleClick (e) {
     e.preventDefault();
-    this.props.setCurrentEpisode(this.props.episode.id);
-    if (this.props.currentEpisodePlaying) {
-      this.props.playCurrentEpisode();
-    } else {
-      this.play();
-    }
+    this.props.setCurrentEpisode(this.props.episode.id)
+    // let previousEpisodeId = this.props.currentEpisodeId;
+    // this.props.setCurrentEpisode(this.props.episode.id);
+    // if (!this.props.isCurrentEpisodePlaying) {
+    //   this.props.playCurrentEpisode();
+    // } else if (this.props.isCurrentEpisodePlaying && (previousEpisodeId !== this.props.episode.id)){
+    //   console.log(previousEpisodeId)
+    //   this.props.playCurrentEpisode();
+    // } else if (this.props.isCurrentEpisodePlaying && (previousEpisodeId === this.props.episode.id)) {
+    //   this.props.pauseCurrentEpisode();
+    // }
   }
 
   play () {
-    if (this.props.currentEpisodePlaying) {
+    if (this.props.isCurrentEpisodePlaying) {
       this.props.pauseCurrentEpisode();
     } else {
       this.props.playCurrentEpisode();
@@ -28,7 +46,7 @@ class Episode extends React.Component {
 
   render () {
     let playIcon, collection_name;
-    if (this.props.episode.id === this.props.currentEpisodeId && this.props.currentEpisodePlaying) {
+    if (this.props.episode.id === this.props.currentEpisodeId && this.props.isCurrentEpisodePlaying) {
       playIcon = <FaPause onClick={this.handleClick} />
     } else {
       playIcon = <FaPlay onClick={this.handleClick}/>
