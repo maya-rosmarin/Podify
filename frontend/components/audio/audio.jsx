@@ -94,7 +94,7 @@ class Audio extends React.Component {
           </button>
         </center>
         <right className="slidecontainer">
-          <input className="slider" type="range" min="0" max="1" step="0.05" onChange={this.handleVolume} value={this.state.volume}></input>
+          <input className="slider" type="range" min="0" max="1" step="0.05" onChange={this.handleVolume} value={this.state.volume} disabled={disabled}></input>
         </right>
       </div>
     )
