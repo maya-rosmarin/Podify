@@ -82,3 +82,14 @@
   padding-right: 10px;
   padding-left: 10px;
 }
+
+.ep {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+#ep-title {
+  font-size: 18px;
+  color: #e5e5e5;
+}

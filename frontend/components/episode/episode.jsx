@@ -30,12 +30,15 @@ class Episode extends React.Component {
       playIcon = <FaPlay onClick={this.handleClick}/>
     }
     if (this.props.episode.collection_name) {
-      collection_name = ` - ${this.props.episode.collection_name}`
+      collection_name = `${this.props.episode.collection_name}`
     }
     return (
       <div className="episode-index-item">
         <div className="musical-note-button">
-          <div className="music-note">{playIcon}{this.props.episode.title}  {collection_name}</div>
+          <div className="ep">
+            <div className="music-note" id="ep-title">{playIcon}{this.props.episode.title}</div>
+            <div>{collection_name}</div>
+          </div>
             <div className="summary-hover">{this.props.episode.summary}
             </div>
         </div>

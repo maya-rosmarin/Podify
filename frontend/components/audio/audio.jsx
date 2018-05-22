@@ -45,7 +45,6 @@ class Audio extends React.Component {
   }
 
   render () {
-    debugger
     this.playTag();
     let audio, title, padding, disabled, className, skipBackward, skipForward, play_pause, image;
     if (this.props.currentEpisodeLocal) {
@@ -71,6 +70,7 @@ class Audio extends React.Component {
       skipForward = "disabled-skip-forward"
       skipBackward = "disabled-skip-backward"
     };
+    debugger
     if (this.props.currentEpisodePlaying) {
       play_pause = <FaPause />
       padding = "";
