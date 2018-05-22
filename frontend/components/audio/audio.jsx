@@ -70,7 +70,6 @@ class Audio extends React.Component {
       skipForward = "disabled-skip-forward"
       skipBackward = "disabled-skip-backward"
     };
-    debugger
     if (this.props.currentEpisodePlaying) {
       play_pause = <FaPause />
       padding = "";
@@ -78,10 +77,10 @@ class Audio extends React.Component {
       play_pause = <FaPlay />
       padding = "i";
     }
+    // <img className="audio-image" src={image} />
     return (
       <div className="audio-player">
         <div className="currently-playing">
-          <img className="audio-image" src={image} />
           {title}
         </div>
         <center>

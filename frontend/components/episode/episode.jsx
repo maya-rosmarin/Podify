@@ -11,7 +11,11 @@ class Episode extends React.Component {
   handleClick (e) {
     e.preventDefault();
     this.props.setCurrentEpisode(this.props.episode.id);
-    this.play();
+    if (this.props.currentEpisodePlaying) {
+      this.props.playCurrentEpisode();
+    } else {
+      this.play();
+    }
   }
 
   play () {
