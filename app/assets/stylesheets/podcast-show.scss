@@ -45,6 +45,7 @@
   display: flex;
   flex-direction: row;
   padding-right: 15px;
+  width: 100%;
 }
 
 .episode-index-item:hover {
@@ -69,4 +70,15 @@
 
 .episode-index-item:hover .summary-hover {
   visibility: visible;
+}
+
+.successful-download {
+  color: #c4c4c4;
+  margin-top: 15px;
+  margin-left: 15px;
+  background-color: #3d423f;
+  border-radius: 5px;
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
 }

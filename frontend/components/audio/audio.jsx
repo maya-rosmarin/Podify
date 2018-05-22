@@ -47,10 +47,11 @@ class Audio extends React.Component {
   render () {
     debugger
     this.playTag();
-    let audio, title, padding, disabled, className, skipBackward, skipForward, play_pause;
+    let audio, title, padding, disabled, className, skipBackward, skipForward, play_pause, image;
     if (this.props.currentEpisodeLocal) {
       audio = <audio onCanPlayThrough={() => {this.playTag();}} src={this.props.currentEpisodeLocal.audio} ref={(audio) => this.audio = audio} ></audio>
       title = this.props.currentEpisodeLocal.title
+      image = this.props.currentEpisodeLocal.image_url
       disabled = false;
       className = "audio-player-play-pause"
       skipBackward = "audio-player-skip skip-left"
@@ -58,6 +59,7 @@ class Audio extends React.Component {
     } else if (this.props.currentEpisodeRemote) {
       audio = <audio onCanPlayThrough={() => {this.playTag();}} src={this.props.currentEpisodeRemote.audio} ref={(audio) => this.audio = audio} ></audio>
       title = this.props.currentEpisodeRemote.title
+      image = this.props.currentEpisodeRemote.image_url
       disabled = false
       className = "audio-player-play-pause"
       skipBackward = "audio-player-skip skip-left"
@@ -79,6 +81,7 @@ class Audio extends React.Component {
     return (
       <div className="audio-player">
         <div className="currently-playing">
+          <img className="audio-image" src={image} />
           {title}
         </div>
         <center>

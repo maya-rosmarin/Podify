@@ -16,7 +16,9 @@ center {
 
 .currently-playing {
   color: #afafaf;
-  margin-right: 600px;
+  margin-right: 1000px;
+  // display: flex;
+  // flex-direction: row;
 }
 
 .audio-player-play-pause {
@@ -150,3 +152,11 @@ center {
   font-size: 16px;
   cursor: auto;
 }
+
+// .audio-image {
+//   width: 50px;
+//   height: 50px;
+//   border: none;
+//   margin-right: 5px;
+//   justify-content: flex-start;
+// }

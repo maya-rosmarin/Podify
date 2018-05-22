@@ -24,27 +24,33 @@ class PodcastShowPage extends React.Component {
     }
   }
 
+  sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time))
+  }
+
   handleSubmit (episode) {
-    debugger
     return (e) => {
       e.preventDefault();
       episode.collection_name = localStorage.getItem('collectionName')
+      episode.image_url = localStorage.getItem('artworkUrl')
       this.props.saveSinglePodcastEpisode(episode)
-      this.setState({text: 'Successfully downloaded'})
+      this.setState({text: 'Successfully downloaded'});
+      this.sleep(2000).then(() => this.setState({text: ''}))
     }
   }
 
+  // <img className="show-image" src={this.props.currentPodcast.artworkUrl600} />
   render () {
     let podcast, episodes;
     const title = this.props.match.params.collectionName;
     if (this.props.currentPodcast) {
       podcast = (
         <div>
-          <img className="show-image" src={this.props.currentPodcast.artworkUrl600} />
         </div>
       );
 
       localStorage.setItem("collectionName", title);
+      localStorage.setItem("artworkUrl", this.props.currentPodcast.artworkUrl600)
 
       if (this.props.currentPodcastEpisodes) {
         episodes = this.props.currentPodcastEpisodes.map((episode) => {
@@ -67,7 +73,7 @@ class PodcastShowPage extends React.Component {
           <br />
           <br />
           <div className="podcast-show-art">{podcast}</div>
-          <div>{this.state.text}</div>
+          <div className="successful-download">{this.state.text}</div>
         </div>
         <div className="episode-index">{episodes}</div>
       </div>

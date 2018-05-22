@@ -12,6 +12,7 @@
 #  updated_at      :datetime         not null
 #  user_id         :integer
 #  collection_name :string
+#  image_url       :string
 #
 
 class Episode < ApplicationRecord
